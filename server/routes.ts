@@ -76,8 +76,7 @@ export async function registerRoutes(
   //Seeder Ends
   // Sample data
   const mockDevice = {
-    manufacturer: "ZTEEE Technologies",
-    //model: "H2640",
+    manufacturer: process.env.DEFAULT_MANUFACTURER || "ZTEEE Technologies",
     model: process.env.DEFAULT_CPE_PRODUCTCLASS || "H5745 V3",
     oui: process.env.DEFAULT_CPE_OUI || "00D0D0",
     //productClass: "H2640",

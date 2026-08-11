@@ -139,8 +139,8 @@ export class DataSeeder {
                 this.logger.info('New device detected – applying bootstrap settings');
                 await Promise.all([
                     this.storage.updateSetting('acsUrl', this.defaultAcsUrl),
-                    this.storage.updateSetting('username', 'cpedefaultusr'),
-                    this.storage.updateSetting('password', 'cpedefaultpwd'),
+                    this.storage.updateSetting('username', (process.env.DEFAULT_ACS_USERNAME) ? process.env.DEFAULT_ACS_USERNAME : 'cpedefaultusr'),
+                    this.storage.updateSetting('password', (process.env.DEFAULT_ACS_PASSWORD) ? process.env.DEFAULT_ACS_PASSWORD : 'cpedefaultpwd'),
                     this.storage.updateParameter(DEVICE_TR069_DATA_MODEL_TYPE + '.ManagementServer.URL', this.defaultAcsUrl),
                 ]);
             }
@@ -266,9 +266,9 @@ export class DataSeeder {
             this.logger.warn('acsUrl setting missing – inserting defaults');
             await Promise.all([
                 this.storage.insertOrUpdateSetting('acsUrl', this.defaultAcsUrl),
-                this.storage.insertOrUpdateSetting('username', 'cpedefaultusr'),
-                this.storage.insertOrUpdateSetting('password', 'cpedefaultpwd'),
-                this.storage.insertOrUpdateSetting('innterval', '60'),
+                this.storage.insertOrUpdateSetting('username', (process.env.DEFAULT_ACS_USERNAME) ? process.env.DEFAULT_ACS_USERNAME : 'cpedefaultusr'),
+                this.storage.insertOrUpdateSetting('password', (process.env.DEFAULT_ACS_PASSWORD) ? process.env.DEFAULT_ACS_PASSWORD : 'cpedefaultpwd'),
+                this.storage.insertOrUpdateSetting('interval', (process.env.DEFAULT_INTERVAL) ? process.env.DEFAULT_INTERVAL : '60'),
                 this.storage.insertOrUpdateSetting('periodicInformEnabled', 'true'),
             ]);
         }

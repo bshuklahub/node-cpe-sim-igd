@@ -9,3 +9,5 @@ logs
 logs/*
 .env
 *.tar
+executables/cpe-sim-igd.exe
+executables/rest-express.exe

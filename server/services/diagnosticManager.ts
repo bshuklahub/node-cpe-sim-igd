@@ -7,6 +7,9 @@ import { EVENTS } from "./eventService";
 import { eventService } from "server/routes";
 import { defaults } from "pg";
 const LOGGER = getLogger('DIAGNOSTICS_MANAGER');
+
+//For TR181 it would be Device.IP.Diagnostics
+const DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE = process.env.DEVICE_TR069_DATA_MODEL_TYPE || "InternetGatewayDevice";
 // Helper: Format ISO date or null
 const formatDateTime = (date: Date | null): string | null => {
     return date ? date.toISOString() : null;
@@ -277,23 +280,23 @@ export class DiagnosticsManager {
         const throughput = calculateThroughput(dl.testBytesReceived || 0, dl.bomTime, dl.eomTime);
         const parameterNames = [];
         const parameters = [
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.DiagnosticsState", value: dl.diagnosticsState, type: "string" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.Interface", value: dl.interface || "", type: "string" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.DownloadURL", value: dl.downloadUrl, type: "string" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.DSCP", value: dl.dscp || 0, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.EthernetPriority", value: dl.ethernetPriority || 0, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.ProtocolVersion", value: dl.protocolVersion || "Any", type: "string" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.NumberOfConnections", value: dl.numberOfConnections || 1, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.ROMTime", value: formatDateTime(dl.romTime), type: "dateTime" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.BOMTime", value: formatDateTime(dl.bomTime), type: "dateTime" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.EOMTime", value: formatDateTime(dl.eomTime), type: "dateTime" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.TestBytesReceived", value: dl.testBytesReceived || 0, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.TotalBytesReceived", value: dl.totalBytesReceived || 0, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.TCPOpenRequestTime", value: formatDateTime(dl.tcpOpenRequestTime), type: "dateTime" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.TCPOpenResponseTime", value: formatDateTime(dl.tcpOpenResponseTime), type: "dateTime" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.DiagnosticsState", value: dl.diagnosticsState, type: "string" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.Interface", value: dl.interface || "", type: "string" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.DownloadURL", value: dl.downloadUrl, type: "string" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.DSCP", value: dl.dscp || 0, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.EthernetPriority", value: dl.ethernetPriority || 0, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.ProtocolVersion", value: dl.protocolVersion || "Any", type: "string" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.NumberOfConnections", value: dl.numberOfConnections || 1, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.ROMTime", value: formatDateTime(dl.romTime), type: "dateTime" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.BOMTime", value: formatDateTime(dl.bomTime), type: "dateTime" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.EOMTime", value: formatDateTime(dl.eomTime), type: "dateTime" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.TestBytesReceived", value: dl.testBytesReceived || 0, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.TotalBytesReceived", value: dl.totalBytesReceived || 0, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.TCPOpenRequestTime", value: formatDateTime(dl.tcpOpenRequestTime), type: "dateTime" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.TCPOpenResponseTime", value: formatDateTime(dl.tcpOpenResponseTime), type: "dateTime" },
             // Calculated values for ACS convenience
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.X_ThroughputBps", value: throughput.bps, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.DownloadDiagnostics.X_ThroughputMbps", value: throughput.mbps, type: "decimal" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.X_ThroughputBps", value: throughput.bps, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".DownloadDiagnostics.X_ThroughputMbps", value: throughput.mbps, type: "decimal" },
         ];
         //Update DB parameters
         for (const d of parameters) {
@@ -315,25 +318,25 @@ export class DiagnosticsManager {
         const throughput = calculateThroughput(ul.testBytesSent || 0, ul.bomTime, ul.eomTime);
 
         const parameters = [
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.DiagnosticsState", value: ul.diagnosticsState, type: "string" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.Interface", value: ul.interface || "", type: "string" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.UploadURL", value: ul.uploadUrl, type: "string" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.DSCP", value: ul.dscp || 0, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.EthernetPriority", value: ul.ethernetPriority || 0, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.TestFileLength", value: ul.testFileLength, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.ProtocolVersion", value: ul.protocolVersion || "Any", type: "string" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.NumberOfConnections", value: ul.numberOfConnections || 1, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.ROMTime", value: formatDateTime(ul.romTime), type: "dateTime" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.BOMTime", value: formatDateTime(ul.bomTime), type: "dateTime" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.EOMTime", value: formatDateTime(ul.eomTime), type: "dateTime" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.TestBytesSent", value: ul.testBytesSent || 0, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.TotalBytesSent", value: ul.totalBytesSent || 0, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.TotalBytesReceived", value: ul.totalBytesReceived || 0, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.TCPOpenRequestTime", value: formatDateTime(ul.tcpOpenRequestTime), type: "dateTime" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.TCPOpenResponseTime", value: formatDateTime(ul.tcpOpenResponseTime), type: "dateTime" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.DiagnosticsState", value: ul.diagnosticsState, type: "string" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.Interface", value: ul.interface || "", type: "string" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.UploadURL", value: ul.uploadUrl, type: "string" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.DSCP", value: ul.dscp || 0, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.EthernetPriority", value: ul.ethernetPriority || 0, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.TestFileLength", value: ul.testFileLength, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.ProtocolVersion", value: ul.protocolVersion || "Any", type: "string" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.NumberOfConnections", value: ul.numberOfConnections || 1, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.ROMTime", value: formatDateTime(ul.romTime), type: "dateTime" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.BOMTime", value: formatDateTime(ul.bomTime), type: "dateTime" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.EOMTime", value: formatDateTime(ul.eomTime), type: "dateTime" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.TestBytesSent", value: ul.testBytesSent || 0, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.TotalBytesSent", value: ul.totalBytesSent || 0, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.TotalBytesReceived", value: ul.totalBytesReceived || 0, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.TCPOpenRequestTime", value: formatDateTime(ul.tcpOpenRequestTime), type: "dateTime" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.TCPOpenResponseTime", value: formatDateTime(ul.tcpOpenResponseTime), type: "dateTime" },
             // Calculated values for ACS convenience
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.X_ThroughputBps", value: throughput.bps, type: "unsignedInt" },
-            { name: "Device.IP.Diagnostics.UploadDiagnostics.X_ThroughputMbps", value: throughput.mbps, type: "decimal" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.X_ThroughputBps", value: throughput.bps, type: "unsignedInt" },
+            { name: DEVICE_TR069_DATA_DIAGNOSTICS_MODEL_TYPE + ".UploadDiagnostics.X_ThroughputMbps", value: throughput.mbps, type: "decimal" },
         ];
         //Update DB parameters
         for (const d of parameters) {

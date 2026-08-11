@@ -1,0 +1,4250 @@
+[
+  {
+    "name": "Device.DeviceInfo.AdditionalHardwareVersion",
+    "value": "AdditionalHardwareVersion",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.AdditionalSoftwareVersion",
+    "value": "AdditionalSoftwareVersion",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.Description",
+    "value": "Description",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.HardwareVersion",
+    "value": "1.2",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.Manufacturer",
+    "value": "ZTE",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.ManufacturerOUI",
+    "value": "00D0D0",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.ModelName",
+    "value": "H2640W",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.ProductClass",
+    "value": "H2640W",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.ProvisioningCode",
+    "value": "1234567890",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.SerialNumber",
+    "value": "SIM876543859999",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.SoftwareVersion",
+    "value": "1.2.3.4",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.SupportedDataModel.0.URL",
+    "value": "http://127.0.0.1:8032/dt/device-2-0-example-dt.xml",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.SupportedDataModel.0.URN",
+    "value": "2wire-com:device-2-0:example",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.UpTime",
+    "value": "0147801",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.UpTime",
+    "value": "86400",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.VendorConfigFile.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.VendorConfigFile.1.Description",
+    "value": "Description",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.VendorConfigFile.1.Name",
+    "value": "Name",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.VendorConfigFile.1.Version",
+    "value": "Version",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DeviceInfo.VendorConfigFileNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.ConnectionRequestPassword",
+    "value": "guest",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.ConnectionRequestURL",
+    "value": "http://127.0.0.1:8080/connectionReqeust",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.ConnectionRequestUsername",
+    "value": "guest",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.CWMPRetryIntervalMultiplier",
+    "value": "12467",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.CWMPRetryMinimumWaitInterval",
+    "value": "8418",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.DefaultActiveNotificationThrottle",
+    "value": "0147942",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.DownloadProgressURL",
+    "value": "http://127.0.0.1:8080/downloadProgress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.EnableCWMP",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.KickURL",
+    "value": "971qkoq",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.ManageableDevice.",
+    "value": "1",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.ManageableDeviceNumberOfEntries",
+    "value": "0",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.NATDetected",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.ParameterKey",
+    "value": "7201155308",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.Password",
+    "value": "cpedefaultpwd",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.PeriodicInformEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.PeriodicInformInterval",
+    "value": "58",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.STUNEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.STUNMaximumKeepAlivePeriod",
+    "value": "0147942",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.STUNMinimumKeepAlivePeriod",
+    "value": "0147942",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.STUNPassword",
+    "value": "3uq7dm2lpbd90m17",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.STUNServerAddress",
+    "value": "78a5fto70nt",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.STUNServerPort",
+    "value": "53838",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.STUNUsername",
+    "value": "a83d8li31h2k6r",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.UDPConnectionRequestAddress",
+    "value": "vkeqo4upn71",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.UpgradesManaged",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.URL",
+    "value": "http://trm-wg:7080/cwmpWeb/WGCPEMgt",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.ManagementServer.Username",
+    "value": "cpedefaultusr",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.Alias",
+    "value": "t",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.AssociatedDevice.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.AssociatedDevice.1.Active",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.AssociatedDevice.1.AuthenticationState",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.AssociatedDevice.1.LastDataDownlinkRate",
+    "value": "15112",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.AssociatedDevice.1.LastDataUplinkRate",
+    "value": "524611",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.AssociatedDevice.1.MACAddress",
+    "value": "MACAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.AssociatedDevice.1.MACAddress",
+    "value": "AA:BB:CC:DD:EE:01",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.AssociatedDevice.1.OperatingStandards",
+    "value": "802.11n",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.AssociatedDevice.1.Retransmissions",
+    "value": "51",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.AssociatedDevice.1.SignalStrength",
+    "value": "-191",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.AssociatedDevice.1.SignalStrength",
+    "value": "-55",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.AssociatedDeviceNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.RetryLimit",
+    "value": "2",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.Security.KeyPassphrase",
+    "value": "fav7p",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.Security.ModeEnabled",
+    "value": "ModeEnabled",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.Security.ModesSupported",
+    "value": "ModesSupported",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.Security.PreSharedKey",
+    "value": "8sp",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.Security.RadiusSecret",
+    "value": "RadiusSecret",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.Security.RadiusServerIPAddr",
+    "value": "RadiusServerIPAddr",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.Security.RadiusServerPort",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.Security.RekeyingInterval",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.Security.WEPKey",
+    "value": "d",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.SSIDAdvertisementEnabled",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.SSIDReference",
+    "value": "3smf2sb3onhmsulilj28mnj",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.UAPSDCapability",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.UAPSDEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.WMMCapability",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.WMMEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.WPS.ConfigMethodsEnabled",
+    "value": "ConfigMethodsEnabled",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.WPS.ConfigMethodsSupported",
+    "value": "ConfigMethodsSupported",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.1.WPS.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.2.AssociatedDevice.1.MACAddress",
+    "value": "AA:BB:CC:DD:EE:02",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.2.AssociatedDevice.1.OperatingStandards",
+    "value": "802.11ax",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.2.AssociatedDevice.1.SignalStrength",
+    "value": "-48",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.AssociatedDevice.1.AssociationTime",
+    "value": "1200",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.AssociatedDevice.1.ChannelBandwidth",
+    "value": "320MHz",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.AssociatedDevice.1.MACAddress",
+    "value": "AA:BB:CC:DD:EE:03",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.AssociatedDevice.1.MLOSupported",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.AssociatedDevice.1.OperatingStandards",
+    "value": "802.11be",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.AssociatedDevice.1.SignalStrength",
+    "value": "-35",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.AssociatedDevice.2.MACAddress",
+    "value": "AA:BB:CC:DD:EE:04",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.AssociatedDevice.2.OperatingStandards",
+    "value": "802.11ax",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.AssociatedDevice.2.SignalStrength",
+    "value": "-42",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.BSSColor",
+    "value": "42",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.BSSColoring",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.OBSSPDThreshold",
+    "value": "-82",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.Preamble",
+    "value": "HE/EHT",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.SpatialReuseEnabled",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.SSIDAdvertisementEnabled",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPoint.3.WPS.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.AccessPointNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Alias",
+    "value": "12l50",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Profile.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Profile.1.Alias",
+    "value": "2i9jrh3",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Profile.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Profile.1.Location",
+    "value": "Location",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Profile.1.Priority",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Profile.1.Security.KeyPassphrase",
+    "value": "1u0iua6qee7l",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Profile.1.Security.ModeEnabled",
+    "value": "ModeEnabled",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Profile.1.Security.PreSharedKey",
+    "value": "890t",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Profile.1.Security.WEPKey",
+    "value": "6",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Profile.1.SSID",
+    "value": "1pi2g",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Profile.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.ProfileNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.ProfileReference",
+    "value": "6jj924l1bjhc",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Security.ModesSupported",
+    "value": "ModesSupported",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.SSIDReference",
+    "value": "1f6k6pr1ltochicck0r60qc13",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Stats.LastDataDownlinkRate",
+    "value": "259976",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Stats.LastDataUplinkRate",
+    "value": "186253",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Stats.Retransmissions",
+    "value": "91",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Stats.SignalStrength",
+    "value": "-79",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.WPS.ConfigMethodsEnabled",
+    "value": "ConfigMethodsEnabled",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.WPS.ConfigMethodsSupported",
+    "value": "ConfigMethodsSupported",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPoint.1.WPS.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.EndPointNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Alias",
+    "value": "g",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.AutoChannelEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.AutoChannelRefreshPeriod",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.AutoChannelSupported",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Channel",
+    "value": "225",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Channel",
+    "value": "6",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.ChannelsInUse",
+    "value": "ChannelsInUse",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.ExtensionChannel",
+    "value": "ExtensionChannel",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.GuardInterval",
+    "value": "GuardInterval",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.IEEE80211hEnabled",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.IEEE80211hSupported",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.LastChange",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.LowerLayers",
+    "value": "Object",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.MaxBitRate",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.MCS",
+    "value": "17",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Name",
+    "value": "1pltsi",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.OperatingChannelBandwidth",
+    "value": "OperatingChannelBandwidth",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.OperatingChannelBandwidth",
+    "value": "40MHz",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.OperatingFrequencyBand",
+    "value": "OperatingFrequencyBand",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.OperatingFrequencyBand",
+    "value": "2.4GHz",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.OperatingStandards",
+    "value": "OperatingStandards",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.OperatingStandards",
+    "value": "802.11ax,802.11ac,802.11n,802.11g,802.11b",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.PossibleChannels",
+    "value": "PossibleChannels",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.RegulatoryDomain",
+    "value": "2",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Stats.BytesReceived",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Stats.BytesSent",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Stats.DiscardPacketsReceived",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Stats.DiscardPacketsSent",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Stats.ErrorsReceived",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Stats.ErrorsSent",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Stats.PacketsReceived",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Stats.PacketsSent",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.SupportedFrequencyBands",
+    "value": "SupportedFrequencyBands",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.SupportedStandards",
+    "value": "SupportedStandards",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.TransmitPower",
+    "value": "72",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.TransmitPower",
+    "value": "100",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.TransmitPowerSupported",
+    "value": "64",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.1.Upstream",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.2.BeamformingSupported",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.2.Channel",
+    "value": "36",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.2.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.2.MUMIMOSupported",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.2.OperatingChannelBandwidth",
+    "value": "160MHz",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.2.OperatingFrequencyBand",
+    "value": "5GHz",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.2.OperatingStandards",
+    "value": "802.11ax,802.11ac,802.11n",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.2.TransmitPower",
+    "value": "100",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.AFCAvailableChannels",
+    "value": "37,53,69,85,101,117,133,149,165,181,197,213",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.AFCEnabled",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.AFCMaxPower",
+    "value": "30",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.AFCStatus",
+    "value": "Enabled",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.BeamformingSupported",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.Channel",
+    "value": "37",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.ChannelMode",
+    "value": "HE/EHT",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.LowPowerIndoor",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.MLOEnabled",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.MLOLinks",
+    "value": "2.4GHz,5GHz,6GHz",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.MUMIMOAntennas",
+    "value": "8",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.MUMIMOSupported",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.OperatingChannelBandwidth",
+    "value": "320MHz",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.OperatingFrequencyBand",
+    "value": "6GHz",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.OperatingStandards",
+    "value": "802.11be,802.11ax",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.PSDLimit",
+    "value": "5",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.StandardPowerEnabled",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.Stats.BytesReceived",
+    "value": "9876543210",
+    "type": "unsignedLong",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.Stats.BytesSent",
+    "value": "4567890123",
+    "type": "unsignedLong",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.Stats.CCAFailures",
+    "value": "45",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.Stats.PacketsReceived",
+    "value": "2345678",
+    "type": "unsignedLong",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.Stats.PacketsSent",
+    "value": "1234567",
+    "type": "unsignedLong",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.Stats.Retransmissions",
+    "value": "125",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.TransmitPower",
+    "value": "85",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.TransmitPowerLimit",
+    "value": "23",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.Radio.3.ULOFDMASupported",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.RadioNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Alias",
+    "value": "up7mdmraph",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.BSSID",
+    "value": "BSSID",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.LastChange",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.LowerLayers",
+    "value": "Device.WiFi.Radio.1",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.MACAddress",
+    "value": "MACAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Name",
+    "value": "7565j",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Security.ModeEnabled",
+    "value": "WPA2-Personal",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.SSID",
+    "value": "ks",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.SSID",
+    "value": "HomeNetwork_2G",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.BroadcastPacketsReceived",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.BroadcastPacketsSent",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.BytesReceived",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.BytesSent",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.DiscardPacketsReceived",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.DiscardPacketsSent",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.ErrorsReceived",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.ErrorsSent",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.MulticastPacketsReceived",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.MulticastPacketsSent",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.PacketsReceived",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.PacketsSent",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.UnicastPacketsReceived",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.UnicastPacketsSent",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Stats.UnknownProtoPacketsReceived",
+    "value": "0147973",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.2.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.2.Security.ModeEnabled",
+    "value": "WPA3-Personal",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.2.SSID",
+    "value": "HomeNetwork_5G",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.3.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.3.Hidden",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.3.IsolationEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.3.OWETransitionMode",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.3.Security.EncryptionMode",
+    "value": "AES-256-GCMP",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.3.Security.ModeEnabled",
+    "value": "WPA3-Enterprise",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.3.Security.PMKSA",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSID.3.SSID",
+    "value": "HomeNetwork_6G",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.WiFi.SSIDNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.ActivePort.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.ActivePort.1.LocalIPAddress",
+    "value": "LocalIPAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.ActivePort.1.LocalPort",
+    "value": "29424",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.ActivePort.1.RemoteIPAddress",
+    "value": "RemoteIPAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.ActivePort.1.RemotePort",
+    "value": "18978",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.ActivePort.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.ActivePortNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.Capabilities.PerformanceDiagnostic.DownloadTransports",
+    "value": "HTTP,FTP",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.DownloadDiagnostics.BOMTime",
+    "value": "2014-01-07T11:47:30Z",
+    "type": "dateTime",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.DownloadDiagnostics.DiagnosticsState",
+    "value": "None",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.DownloadDiagnostics.DownloadURL",
+    "value": "http://10.10.10.255/download",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.DownloadDiagnostics.DSCP",
+    "value": "0",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.DownloadDiagnostics.EOMTime",
+    "value": "2014-01-07T11:48:45Z",
+    "type": "dateTime",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.DownloadDiagnostics.EthernetPriority",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.DownloadDiagnostics.Interface",
+    "value": "eth0",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.DownloadDiagnostics.ROMTime",
+    "value": "2014-01-07T11:46:23Z",
+    "type": "dateTime",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.DownloadDiagnostics.TCPOpenRequestTime",
+    "value": "2014-01-07T11:48:45Z",
+    "type": "dateTime",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.DownloadDiagnostics.TCPOpenResponseTime",
+    "value": "2014-01-07T11:48:45Z",
+    "type": "dateTime",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.DownloadDiagnostics.TestBytesReceived",
+    "value": "9999",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.DownloadDiagnostics.TotalBytesReceived",
+    "value": "10500",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.IPPing.AverageResponseTime",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.IPPing.DataBlockSize",
+    "value": "2411",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.IPPing.DiagnosticsState",
+    "value": "DiagnosticsState",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.IPPing.DSCP",
+    "value": "39",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.IPPing.FailureCount",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.IPPing.Host",
+    "value": "1iq6l3gv0a2atros384o",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.IPPing.Interface",
+    "value": "3crv",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.IPPing.MaximumResponseTime",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.IPPing.MinimumResponseTime",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.IPPing.NumberOfRepetitions",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.IPPing.SuccessCount",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.IPPing.Timeout",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.DataBlockSize",
+    "value": "23464",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.DiagnosticsState",
+    "value": "DiagnosticsState",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.DSCP",
+    "value": "63",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.Host",
+    "value": "1samun4dotv32urbvq3n0mg6ra",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.Interface",
+    "value": "2s",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.MaxHopCount",
+    "value": "30",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.NumberOfTries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.ResponseTime",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.RouteHops.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.RouteHops.1.ErrorCode",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.RouteHops.1.Host",
+    "value": "1l6qspna",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.RouteHops.1.HostAddress",
+    "value": "HostAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.RouteHops.1.RTTimes",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.RouteHopsNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.TraceRoute.Timeout",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoConfig.",
+    "value": "5",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoConfig.EchoPlusEnabled",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoConfig.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoConfig.Interface",
+    "value": "WANIPInterface",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoConfig.SourceIPAddress",
+    "value": "mb1553.idc.devlab.motive.com",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoConfig.UDPPort",
+    "value": "1122",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoDiagnostics.",
+    "value": "6",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoDiagnostics.DataBlockSize",
+    "value": "24",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoDiagnostics.DiagnosticsState",
+    "value": "None",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoDiagnostics.EnableIndividualPacketResults",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoDiagnostics.Host",
+    "value": "127.0.0.1",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoDiagnostics.IndividualPacketResult.",
+    "value": "7",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoDiagnostics.Interface",
+    "value": "eth0",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoDiagnostics.InterTransmissionTime",
+    "value": "10000",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoDiagnostics.IPAddressUsed",
+    "value": "127.0.0.1",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoDiagnostics.NumberOfRepetitions",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoDiagnostics.Port",
+    "value": "4343",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoDiagnostics.ProtocolVersion",
+    "value": "Any",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UDPEchoDiagnostics.Timeout",
+    "value": "1000",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UploadDiagnostics.BOMTime",
+    "value": "2014-01-07T11:47:30Z",
+    "type": "dateTime",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UploadDiagnostics.DiagnosticsState",
+    "value": "None",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UploadDiagnostics.DSCP",
+    "value": "0",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UploadDiagnostics.EOMTime",
+    "value": "2014-01-07T11:48:45Z",
+    "type": "dateTime",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UploadDiagnostics.EthernetPriority",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UploadDiagnostics.Interface",
+    "value": "eth0",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UploadDiagnostics.ROMTime",
+    "value": "2014-01-07T11:46:23Z",
+    "type": "dateTime",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UploadDiagnostics.TCPOpenRequestTime",
+    "value": "2014-01-07T11:48:45Z",
+    "type": "dateTime",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UploadDiagnostics.TCPOpenResponseTime",
+    "value": "2014-01-07T11:48:45Z",
+    "type": "dateTime",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UploadDiagnostics.TestBytesReceived",
+    "value": "9999",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UploadDiagnostics.TestFileLength",
+    "value": "10",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UploadDiagnostics.TotalBytesReceived",
+    "value": "10500",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Diagnostics.UploadDiagnostics.UploadURL",
+    "value": "http://10.10.10.255/upload",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.",
+    "value": "4",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Alias",
+    "value": "15fpeoo05um",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.AutoIPEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv4Address.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv4Address.1.AddressingType",
+    "value": "AddressingType",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv4Address.1.Alias",
+    "value": "2aii",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv4Address.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv4Address.1.IPAddress",
+    "value": "172.31.110.108",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv4Address.1.Status",
+    "value": "Enabled",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv4Address.1.SubnetMask",
+    "value": "SubnetMask",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv4AddressNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv4Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Address.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Address.1.Alias",
+    "value": "chj5bsdkck0c9",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Address.1.Anycast",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Address.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Address.1.IPAddress",
+    "value": "IPAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Address.1.IPAddressStatus",
+    "value": "Inaccessible",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Address.1.Origin",
+    "value": "Origin",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Address.1.Prefix",
+    "value": "Prefix",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Address.1.Status",
+    "value": "Disabled",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6AddressNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Prefix.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Prefix.1.Alias",
+    "value": "2v8tdgr",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Prefix.1.Autonomous",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Prefix.1.ChildPrefixBits",
+    "value": "ChildPrefixBits",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Prefix.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Prefix.1.OnLink",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Prefix.1.Origin",
+    "value": "Origin",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Prefix.1.ParentPrefix",
+    "value": "ParentPrefix",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Prefix.1.Prefix",
+    "value": "Prefix",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Prefix.1.PrefixStatus",
+    "value": "PrefixStatus",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Prefix.1.StaticType",
+    "value": "StaticType",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6Prefix.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.IPv6PrefixNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.LastChange",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Loopback",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.LowerLayers",
+    "value": "Device.PPP.Interface.1",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.MaxMTUSize",
+    "value": "38358",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Name",
+    "value": "8s1res",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Reset",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Router",
+    "value": "36ibuoflfm44enjqeq671ct",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.BroadcastPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.BroadcastPacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.BytesReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.BytesSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.DiscardPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.DiscardPacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.ErrorsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.ErrorsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.MulticastPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.MulticastPacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.PacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.PacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.UnicastPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.UnicastPacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Stats.UnknownProtoPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Status",
+    "value": "Up",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.Type",
+    "value": "Loopback",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.1.ULAEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Alias",
+    "value": "15fpeoo05um",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.AutoIPEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv4Address.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv4Address.1.AddressingType",
+    "value": "AddressingType",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv4Address.1.Alias",
+    "value": "2aii",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv4Address.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv4Address.1.IPAddress",
+    "value": "IPAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv4Address.1.Status",
+    "value": "Error",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv4Address.1.SubnetMask",
+    "value": "SubnetMask",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv4AddressNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv4Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Address.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Address.1.Alias",
+    "value": "chj5bsdkck0c9",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Address.1.Anycast",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Address.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Address.1.IPAddress",
+    "value": "fe80::202:b3ff:fe1e:8329",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Address.1.IPAddressStatus",
+    "value": "Preferred",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Address.1.Origin",
+    "value": "Origin",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Address.1.Prefix",
+    "value": "Prefix",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Address.1.Status",
+    "value": "Enabled",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6AddressNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Prefix.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Prefix.1.Alias",
+    "value": "2v8tdgr",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Prefix.1.Autonomous",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Prefix.1.ChildPrefixBits",
+    "value": "ChildPrefixBits",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Prefix.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Prefix.1.OnLink",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Prefix.1.Origin",
+    "value": "Origin",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Prefix.1.ParentPrefix",
+    "value": "ParentPrefix",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Prefix.1.Prefix",
+    "value": "Prefix",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Prefix.1.PrefixStatus",
+    "value": "PrefixStatus",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Prefix.1.StaticType",
+    "value": "StaticType",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6Prefix.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.IPv6PrefixNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.LastChange",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Loopback",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.LowerLayers",
+    "value": "Device.Ethernet.Link.2",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.MaxMTUSize",
+    "value": "38358",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Name",
+    "value": "8s1res",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Reset",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Router",
+    "value": "36ibuoflfm44enjqeq671ct",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.BroadcastPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.BroadcastPacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.BytesReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.BytesSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.DiscardPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.DiscardPacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.ErrorsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.ErrorsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.MulticastPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.MulticastPacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.PacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.PacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.UnicastPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.UnicastPacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Stats.UnknownProtoPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Status",
+    "value": "Up",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.Type",
+    "value": "Normal",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.2.ULAEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Alias",
+    "value": "15fpeoo05um",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.AutoIPEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv4Address.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv4Address.1.AddressingType",
+    "value": "AddressingType",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv4Address.1.Alias",
+    "value": "2aii",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv4Address.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv4Address.1.IPAddress",
+    "value": "IPAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv4Address.1.Status",
+    "value": "Disabled",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv4Address.1.SubnetMask",
+    "value": "SubnetMask",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv4AddressNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv4Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Address.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Address.1.Alias",
+    "value": "chj5bsdkck0c9",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Address.1.Anycast",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Address.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Address.1.IPAddress",
+    "value": "2001:0db8:85a3:0000:0000:8a2e:0370:7334",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Address.1.IPAddressStatus",
+    "value": "Preferred",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Address.1.Origin",
+    "value": "Origin",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Address.1.Prefix",
+    "value": "Prefix",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Address.1.Status",
+    "value": "Disabled",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6AddressNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Prefix.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Prefix.1.Alias",
+    "value": "2v8tdgr",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Prefix.1.Autonomous",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Prefix.1.ChildPrefixBits",
+    "value": "ChildPrefixBits",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Prefix.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Prefix.1.OnLink",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Prefix.1.Origin",
+    "value": "Origin",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Prefix.1.ParentPrefix",
+    "value": "ParentPrefix",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Prefix.1.Prefix",
+    "value": "Prefix",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Prefix.1.PrefixStatus",
+    "value": "PrefixStatus",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Prefix.1.StaticType",
+    "value": "StaticType",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6Prefix.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.IPv6PrefixNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.LastChange",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Loopback",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.LowerLayers",
+    "value": "Device.Ethernet.Link.3",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.MaxMTUSize",
+    "value": "38358",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Name",
+    "value": "8s1res",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Reset",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Router",
+    "value": "36ibuoflfm44enjqeq671ct",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.BroadcastPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.BroadcastPacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.BytesReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.BytesSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.DiscardPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.DiscardPacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.ErrorsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.ErrorsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.MulticastPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.MulticastPacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.PacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.PacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.UnicastPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.UnicastPacketsSent",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Stats.UnknownProtoPacketsReceived",
+    "value": "0147989",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Status",
+    "value": "Dormant",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.Type",
+    "value": "Normal",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.Interface.3.ULAEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.InterfaceNumberOfEntries",
+    "value": "3",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.IPv4Capable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.IPv4Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.IPv4Status",
+    "value": "IPv4Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.IPv6Capable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.IPv6Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.IPv6Status",
+    "value": "IPv6Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IP.ULAPrefix",
+    "value": "ULAPrefix",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IPv6rd.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IPv6rd.InterfaceSetting.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.IPv6rd.InterfaceSetting.1.AddressSource",
+    "value": "1i07",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IPv6rd.InterfaceSetting.1.Alias",
+    "value": "7rp62rq4726",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IPv6rd.InterfaceSetting.1.AllTrafficToBorderRelay",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IPv6rd.InterfaceSetting.1.BorderRelayIPv4Addresses",
+    "value": "BorderRelayIPv4Addresses",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IPv6rd.InterfaceSetting.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.IPv6rd.InterfaceSetting.1.IPv4MaskLength",
+    "value": "17",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.IPv6rd.InterfaceSetting.1.SPIPv6Prefix",
+    "value": "SPIPv6Prefix",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IPv6rd.InterfaceSetting.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IPv6rd.InterfaceSetting.1.TunneledInterface",
+    "value": "p88vvnnfsc1",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IPv6rd.InterfaceSetting.1.TunnelInterface",
+    "value": "em5pjmu3el6mlipm",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.IPv6rd.InterfaceSettingNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.Alias",
+    "value": "1avrhl",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.DHCPServer",
+    "value": "DHCPServer",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.DHCPStatus",
+    "value": "DHCPStatus",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.DNSServers",
+    "value": "DNSServers",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.Interface",
+    "value": "38gk27js6sn60uhm55lqb25ik50h",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.IPAddress",
+    "value": "IPAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.IPRouters",
+    "value": "IPRouters",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.LeaseTimeRemaining",
+    "value": "0148004",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.PassthroughDHCPPool",
+    "value": "6qbcf16na0bj35n8ba8",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.PassthroughEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.Renew",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.ReqOption.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.ReqOption.1.Alias",
+    "value": "3",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.ReqOption.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.ReqOption.1.Order",
+    "value": "0148004",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.ReqOption.1.Tag",
+    "value": "148",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.ReqOption.1.Value",
+    "value": "775fgi4qbu",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.ReqOptionNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.SentOption.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.SentOption.1.Alias",
+    "value": "1r2bq69a",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.SentOption.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.SentOption.1.Tag",
+    "value": "54",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.SentOption.1.Value",
+    "value": "170",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.SentOptionNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Client.1.SubnetMask",
+    "value": "SubnetMask",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.ClientNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.Alias",
+    "value": "3hr9mrg7k",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.Chaddr",
+    "value": "Chaddr",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.ChaddrExclude",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.ChaddrMask",
+    "value": "ChaddrMask",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.ClientID",
+    "value": "2gsujd79",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.ClientIDExclude",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.DHCPServerIPAddress",
+    "value": "DHCPServerIPAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.Interface",
+    "value": "1c3u429ut5h",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.LocallyServed",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.Order",
+    "value": "0148004",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.UserClassID",
+    "value": "17ms4dq68thumls1j8rhbkke",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.UserClassIDExclude",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.VendorClassID",
+    "value": "os2u6r469",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.VendorClassIDExclude",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Forwarding.1.VendorClassIDMode",
+    "value": "VendorClassIDMode",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.ForwardingNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Relay.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Alias",
+    "value": "33f0",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Chaddr",
+    "value": "Chaddr",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.ChaddrExclude",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.ChaddrMask",
+    "value": "ChaddrMask",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Client.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Client.1.Active",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Client.1.Alias",
+    "value": "r8fhbia",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Client.1.Chaddr",
+    "value": "Chaddr",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Client.1.IPv4Address.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Client.1.IPv4Address.1.IPAddress",
+    "value": "IPAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Client.1.IPv4AddressNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Client.1.Option.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Client.1.Option.1.Tag",
+    "value": "252",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Client.1.Option.1.Value",
+    "value": "310n2b",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Client.1.OptionNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.ClientID",
+    "value": "3dsr04b6",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.ClientIDExclude",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.ClientNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.DNSServers",
+    "value": "DNSServers",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.DomainName",
+    "value": "7s9paeg63",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Interface",
+    "value": "2eke5m",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.IPRouters",
+    "value": "IPRouters",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.LeaseTime",
+    "value": "0148004",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.MaxAddress",
+    "value": "MaxAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.MinAddress",
+    "value": "MinAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Option.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Option.1.Alias",
+    "value": "7t6kg5audf",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Option.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Option.1.Tag",
+    "value": "100",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Option.1.Value",
+    "value": "9pit6bobotevql9o2so33peh84odsc",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.OptionNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Order",
+    "value": "0148004",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.ReservedAddresses",
+    "value": "ReservedAddresses",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.StaticAddress.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.StaticAddress.1.Alias",
+    "value": "6mbrtd",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.StaticAddress.1.Chaddr",
+    "value": "Chaddr",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.StaticAddress.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.StaticAddress.1.Yiaddr",
+    "value": "Yiaddr",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.StaticAddressNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.SubnetMask",
+    "value": "SubnetMask",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.UserClassID",
+    "value": "f1jhonqbob592uo2o4q",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.UserClassIDExclude",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.VendorClassID",
+    "value": "28ftdcgci7d56s5uo7bf",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.VendorClassIDExclude",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.Pool.1.VendorClassIDMode",
+    "value": "VendorClassIDMode",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv4.Server.PoolNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.Alias",
+    "value": "6fvmr",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.DUID",
+    "value": "snm0aq9mp39aeuqt2k",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.Interface",
+    "value": "2nc",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.RapidCommit",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.ReceivedOption.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.ReceivedOption.1.Server",
+    "value": "Server",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.ReceivedOption.1.Tag",
+    "value": "42080",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.ReceivedOption.1.Value",
+    "value": "v72t0q9ietga99v",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.ReceivedOptionNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.Renew",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.RequestAddresses",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.RequestedOptions",
+    "value": "0148004",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.RequestPrefixes",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.SentOption.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.SentOption.1.Alias",
+    "value": "6n",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.SentOption.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.SentOption.1.Tag",
+    "value": "15730",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.SentOption.1.Value",
+    "value": "4ob6s",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.SentOptionNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.Server.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.Server.1.DUID",
+    "value": "1lb",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.Server.1.SourceAddress",
+    "value": "SourceAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.ServerNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.SuggestedT1",
+    "value": "0148004",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.SuggestedT2",
+    "value": "0148004",
+    "type": "int",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Client.1.SupportedOptions",
+    "value": "0148004",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.ClientNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Alias",
+    "value": "3g5c",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.1.Active",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.1.Alias",
+    "value": "5au",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.1.IPv6Address.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.1.IPv6Address.1.IPAddress",
+    "value": "IPAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.1.IPv6AddressNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.1.IPv6Prefix.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.1.IPv6Prefix.1.Prefix",
+    "value": "Prefix",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.1.IPv6PrefixNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.1.Option.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.1.Option.1.Tag",
+    "value": "16534",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.1.Option.1.Value",
+    "value": "1bpe0gaub1ail",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.1.OptionNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Client.1.SourceAddress",
+    "value": "SourceAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.ClientNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.DUID",
+    "value": "1l4sfp",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.DUIDExclude",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.IANAEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.IANAManualPrefixes",
+    "value": "IANAManualPrefixes",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.IANAPrefixes",
+    "value": "IANAPrefixes",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.IAPDAddLength",
+    "value": "0148004",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.IAPDEnable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.IAPDManualPrefixes",
+    "value": "IAPDManualPrefixes",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.IAPDPrefixes",
+    "value": "IAPDPrefixes",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Interface",
+    "value": "1qvut1r3r34dsms3d082b4di8d68",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Option.",
+    "value": "2",
+    "type": "unknown",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Option.1.Alias",
+    "value": "910",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Option.1.Enable",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Option.1.PassthroughClient",
+    "value": "35vkvs5b47i1n343b05q4klvs7aiu",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Option.1.Tag",
+    "value": "64546",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Option.1.Value",
+    "value": "1teetdbn6a",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.OptionNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Order",
+    "value": "0148004",
+    "type": "unsignedInt",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.SourceAddress",
+    "value": "SourceAddress",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.SourceAddressExclude",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.SourceAddressMask",
+    "value": "SourceAddressMask",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.Status",
+    "value": "Status",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.UserClassID",
+    "value": "dpd9mbhfn9oijukq",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.UserClassIDExclude",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.VendorClassID",
+    "value": "1m5cd1re5l3th",
+    "type": "string",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.Pool.1.VendorClassIDExclude",
+    "value": "true",
+    "type": "boolean",
+    "writable": true
+  },
+  {
+    "name": "Device.DHCPv6.Server.PoolNumberOfEntries",
+    "value": "1",
+    "type": "unsignedInt",
+    "writable": true
+  }
+]

@@ -1,0 +1,42 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: fibercop-cpe-sim
+spec:
+  type: LoadBalancer
+  selector:
+    app: fibercop-cpe-sim
+  ports:
+    - port: 8080
+      targetPort: 5000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fibercop-cpe-sim
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fibercop-cpe-sim
+  template:
+    metadata:
+      labels:
+        app: fibercop-cpe-sim
+    spec:
+      volumes:
+        - name: volmap
+          configMap:
+            name: multimap
+      containers:
+        - name: fibercop-cpe-sim
+          image: localhost:5000/node-cpe-sim:latest
+          volumeMounts:
+            - name: volmap
+              mountPath: /etc/name
+          resources:
+            limits:
+              memory: "500Mi"
+              cpu: "250m"
+          ports:
+            - containerPort: 5000

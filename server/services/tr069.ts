@@ -878,6 +878,22 @@ export class TR069Service {
 
       var response;
       switch (process.env.ENDPOINT_CONNECTION_AGENT) {
+        case "0":
+          LOGGER.info("[sendToAcs] Using HTTPS Agent");
+          response = await cookieEnabledFetch(acsUrl, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'text/xml; charset="utf-8"',
+              'SOAPAction': '',
+              'Authorization': `Basic ${token} `
+            },
+            signal: AbortSignal.timeout(ACS_SEND_TIMEOUT_MS),
+            body: xmlBody,
+            /// THIS IS THE FIX
+            agent: httpAgent,
+
+          });
+          break;
         case "1":
           LOGGER.info("[sendToAcs] Using HTTP Proxy Agent");
           response = await cookieEnabledFetch(acsUrl, {

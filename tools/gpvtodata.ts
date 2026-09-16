@@ -1,3 +1,8 @@
+/*
+* How to run this ts file 
+npm install -D ts-node typescript @types/node
+node --loader ts-node/esm ./tools/gpvtodata.ts
+*/
 import * as fs from 'fs';
 import { XMLParser } from 'fast-xml-parser';
 

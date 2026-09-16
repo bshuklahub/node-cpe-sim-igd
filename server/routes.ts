@@ -9,6 +9,7 @@ import { z } from "zod";
 import fs from "fs";
 import multer, { memoryStorage } from 'multer';
 import http from "http";
+import https from "https";
 import { SocksProxyAgent } from "socks-proxy-agent";
 //Added for upload download
 import path from 'path';
@@ -434,11 +435,13 @@ async function startCRServer() {
     const regUrl = `${CONNECTION_REQEUST_REGISTER_URL}`;
     LOGGER.info("startCRServer regurl -->" + regUrl);
     await storage.updateParameter(DEVICE_TR069_DATA_MODEL_TYPE + ".ManagementServer.ConnectionRequestURL", CONNECTION_REQEUST_URL_ON_DEVICE);
-    const result: any = await registerCRRequest(regUrl);
+    const result: any = (process.env.CONNECTION_REQEUST_AGENT_ENABLED === 'true') ? await registerCRRequest(regUrl) : await registerCRRequestNoSocksAgent(regUrl);
     LOGGER.info("Registration Status Code:", result.statusCode);
     LOGGER.info("Response Body:", result.body);
-
+    const isHttps = CONNECTION_REQEUST_URL_ON_DEVICE.startsWith("https");
+    const crClient = isHttps ? https : http;
     setInterval(() => {
+
       //LOGGER.info('CR interval timer !!');
       //cr url http://10.190.23.233:8080/connectionRequest/1
       //console.log("Task running at", new Date().toISOString());
@@ -446,29 +449,74 @@ async function startCRServer() {
       let crStatusUrl = CONNECTION_REQEUST_CR_STATUS_URL;// + (process.env.DEFAULT_CPE_SERIALNUMBER || "SIMH26408877791");
       //check CR status
       console.log("CR Status Code url -->:", crStatusUrl);
-      http.get(crStatusUrl, { agent }, (res) => {
-        //console.log("CR Status Code from CR Server-->:", res.statusCode);
-        LOGGER.info("CR Status Code from CR Server-->:", res.statusCode);
-        if (res.statusCode == 200) {
-          //Send CR  inform
-          try {
-            //tr069.sendInformToACS("2 PERIODIC");
-            // 2. Emit the event to the Node.js EventEmitter
-            // We pass the log.id so the handler can update the specific log entry
+      if (process.env.CONNECTION_REQEUST_AGENT_ENABLED === 'true') {
+        console.log("CR Status Code url -->:", crStatusUrl);
+        crClient.get(crStatusUrl, { agent }, (res) => {
+          let body = "";
+          res.on("data", (chunk) => {
+            body += chunk.toString();
+          });
+          //console.log("CR Status Code from CR Server-->:", res.statusCode);
+          LOGGER.info("CR Status Code from CR Server-->:", res.statusCode);
+          LOGGER.info("CR Status Code from body -->:", body);
+          if (res.statusCode == 200) {
+            //Send CR  inform
+            try {
+              //tr069.sendInformToACS("2 PERIODIC");
+              // 2. Emit the event to the Node.js EventEmitter
+              // We pass the log.id so the handler can update the specific log entry
 
-            //Commented out for troubleshooting 401-SPV
-            LOGGER.info("Sending CR inform....");
-            eventService.emit(EVENTS.INFORM, "CR TIMER-1 from routes.ts", "7 CONNECTION REQUEST");
+              //Commented out for troubleshooting 401-SPV
+              LOGGER.info("Sending CR inform....");
+              eventService.emit(EVENTS.INFORM, "CR TIMER-1 from routes.ts", "7 CONNECTION REQUEST");
 
-          } catch (error) {
+            } catch (error) {
 
-            console.log(error);
+              console.log(error);
+            }
           }
-        }
-        res.on("data", (chunk) => {
-          //console.log("Body:", chunk.toString());
+          res.on("data", (chunk) => {
+            //console.log("Body:", chunk.toString());
+          });
         });
-      });
+      } else {
+        console.log("CR Status Code url -->:", crStatusUrl);
+        // Always send browser-like headers (Cloudflare bypass)
+        const options = {
+          headers: {
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+            "Accept": "application/json",
+            "Accept-Language": "en-US,en;q=0.9"
+          }
+        };
+        crClient.get(crStatusUrl, options, (res) => {
+          //console.log("CR Status Code from CR Server-->:", res.statusCode);
+          LOGGER.info("CR Status Code from CR Server-->:", res.statusCode);
+          //print response
+          LOGGER.info("CR Status  RESPONSE from CR Server-->:", res.rawBody);
+          if (res.statusCode == 200) {
+            //Send CR  inform
+            try {
+              //tr069.sendInformToACS("2 PERIODIC");
+              // 2. Emit the event to the Node.js EventEmitter
+              // We pass the log.id so the handler can update the specific log entry
+
+              //Commented out for troubleshooting 401-SPV
+              LOGGER.info("Sending CR inform....");
+              eventService.emit(EVENTS.INFORM, "CR TIMER-1 from routes.ts", "7 CONNECTION REQUEST");
+
+            } catch (error) {
+
+              console.log(error);
+            }
+          }
+          res.on("data", (chunk) => {
+            //console.log("Body:", chunk.toString());
+          });
+        });
+
+      }
+
       // your logic here
     }, 1 * 5000); // 30 seconds
   } catch (error) {
@@ -480,7 +528,57 @@ async function startCRServer() {
 
 async function registerCRRequest(url: any) {
   return new Promise((resolve, reject) => {
+    // Always send browser-like headers (Cloudflare bypass)
+    const options: { headers: Record<string, string>; agent?: http.Agent | https.Agent } = {
+      headers: {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+        "Accept": "application/json",
+        "Accept-Language": "en-US,en;q=0.9"
+      }
+
+    };
+    const isHttps = url.startsWith("https");
+    if (process.env.CONNECTION_REQEUST_AGENT_ENABLED === "true") {
+      options.agent = isHttps
+        ? new https.Agent({ keepAlive: true })
+        : new http.Agent({ keepAlive: true });
+    }
     const req = http.get(url, { agent }, (res) => {
+      let body = "";
+
+      res.on("data", (chunk) => {
+        body += chunk.toString();
+      });
+
+      res.on("end", () => {
+        resolve({
+          statusCode: res.statusCode,
+          body
+        });
+      });
+    });
+
+    req.on("error", (err) => {
+      reject(err);
+    });
+  });
+}
+
+async function registerCRRequestNoSocksAgent(url: any) {
+  LOGGER.info("registerCRRequestNoSocksAgent url -->" + url);
+  // Always send browser-like headers (Cloudflare bypass)
+  const options = {
+    headers: {
+      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
+      "Accept": "application/json",
+      "Accept-Language": "en-US,en;q=0.9"
+    }
+  };
+  return new Promise((resolve, reject) => {
+    const isHttps = url.startsWith("https");
+    const crClient = isHttps ? https : http;
+
+    const req = crClient.get(url, options, (res) => {
       let body = "";
 
       res.on("data", (chunk) => {

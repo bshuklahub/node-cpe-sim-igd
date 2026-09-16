@@ -69,3 +69,33 @@ podman run --replace -d -p 8080:8080 --restart=always --name crtool crtool:2
 //generating input.jso file 
 npx tsx gpvtodata.ts
 npm run dev -u https://trm-wg-acscoll.azure.fibercop.local:37443/cwmpWeb/WGCPEMgt -s SIMCPESPV40H2640299 -o 00040E -p "FRITZ!Box" -i 90 -k Yes -c No
+
+
+npx drizzle-kit push
+> In 2026, you have two primary ways to sync your model to the database:
+> Method Command Best Use Case
+> Drizzle Push npx drizzle-kit push Local Development: Directly pushes schema changes to the DB without creating migration files.
+> Migrations npx drizzle-kit generate Production/Teams: Generates version-controlled .sql files that you can review and apply.
+
+[bshukla@BRIJESH-PC node-cpe-sim]$ npx drizzle-kit migrate
+No config path provided, using default 'drizzle.config.ts'
+Reading config file '/home/bshukla/node-cpe-sim/drizzle.config.ts'
+[bshukla@BRIJESH-PC node-cpe-sim]$ npx drizzle-kit push
+No config path provided, using default 'drizzle.config.ts'
+Reading config file '/home/bshukla/node-cpe-sim/drizzle.config.ts'
+[✓] Pulling schema from database...
+SqliteError: index users_email_unique already exists
+    at Database.prepare (/home/bshukla/node-cpe-sim/node_modules/better-sqlite3/lib/methods/wrappers.js:5:21)
+    at Object.run (/home/bshukla/node-cpe-sim/node_modules/drizzle-kit/bin.cjs:81314:20)
+    at sqlitePush (/home/bshukla/node-cpe-sim/node_modules/drizzle-kit/bin.cjs:84519:24)
+    at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+    at async Object.handler (/home/bshukla/node-cpe-sim/node_modules/drizzle-kit/bin.cjs:93884:9)
+    at async run (/home/bshukla/node-cpe-sim/node_modules/drizzle-kit/bin.cjs:93117:7) {
+  code: 'SQLITE_ERROR'
+}
+[bshukla@BRIJESH-PC node-cpe-sim]$ npx drizzle-kit push
+No config path provided, using default 'drizzle.config.ts'
+Reading config file '/home/bshukla/node-cpe-sim/drizzle.config.ts'
+[✓] Pulling schema from database...
+[✓] Changes applied
+[bshukla@BRIJESH-PC node-cpe-sim]$

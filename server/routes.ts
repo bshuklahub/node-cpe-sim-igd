@@ -15,6 +15,7 @@ import { SocksProxyAgent } from "socks-proxy-agent";
 import path from 'path';
 import { getLogger } from './util/logutil';
 import { DataSeeder } from './seeder';
+
 // Configure once at app startup
 const LOGGER = getLogger('ROUTES');
 export const eventService = new EventService(tr069, manager);
@@ -481,15 +482,20 @@ async function startCRServer() {
         });
       } else {
         console.log("CR Status Code url -->:", crStatusUrl);
-        // Always send browser-like headers (Cloudflare bypass)
-        const options = {
+        // 1. Generate the Base64 Auth header value
+        const authHeader = 'Basic ' + Buffer.from('admin:admin1234').toString('base64');
+        // 2. Add Firefox spoofing elements and Auth parameters
+        const requestOptions = {
           headers: {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-            "Accept": "application/json",
-            "Accept-Language": "en-US,en;q=0.9"
+            'Authorization': authHeader,
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:133.0) Gecko/20100101 Firefox/133.0',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,*/*;q=0.8',
+            'Accept-Language': 'en-US,en;q=0.5',
+            'Connection': 'keep-alive'
           }
         };
-        crClient.get(crStatusUrl, options, (res) => {
+
+        crClient.get(crStatusUrl, requestOptions, (res) => {
           //console.log("CR Status Code from CR Server-->:", res.statusCode);
           LOGGER.info("CR Status Code from CR Server-->:", res.statusCode);
           //print response
@@ -564,21 +570,44 @@ async function registerCRRequest(url: any) {
   });
 }
 
+
+
 async function registerCRRequestNoSocksAgent(url: any) {
   LOGGER.info("registerCRRequestNoSocksAgent url -->" + url);
-  // Always send browser-like headers (Cloudflare bypass)
-  const options = {
+  // Replace your old crClient.get script logic with this:
+  const response = await fetch(url, {
+    method: 'GET',
     headers: {
-      "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)",
-      "Accept": "application/json",
-      "Accept-Language": "en-US,en;q=0.9"
+      'Authorization': 'Basic ' + Buffer.from('admin:admin1234').toString('base64'),
+      'User-Agent': 'Node-DeviceClient/1.0.0', // An honest script signature
+      'Accept': 'application/json'
+    }
+  });
+
+  const body = await response.text();
+  console.log("~~~~~~~~~~~~~~~registerCRRequestNoSocksAgent response status code:", response.status);
+  console.log(body);
+
+  if (true) {
+    process.exit(0);
+  }
+  // 1. Generate the Base64 Auth header value
+  const authHeader = 'Basic ' + Buffer.from('admin:admin1234').toString('base64');
+  // 2. Add Firefox spoofing elements and Auth parameters
+  const requestOptions = {
+    headers: {
+      'Authorization': authHeader,
+      'User-Agent': 'Node-DeviceClient/1.0.0',
+      'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/png,*/*;q=0.8',
+      'Accept-Language': 'en-US,en;q=0.5',
+      'Connection': 'keep-alive'
     }
   };
   return new Promise((resolve, reject) => {
     const isHttps = url.startsWith("https");
     const crClient = isHttps ? https : http;
 
-    const req = crClient.get(url, options, (res) => {
+    const req = crClient.get(url, requestOptions, (res) => {
       let body = "";
 
       res.on("data", (chunk) => {

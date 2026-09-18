@@ -11,3 +11,8 @@ logs/*
 *.tar
 executables/cpe-sim-igd.exe
 executables/rest-express.exe
+# SQLite database files
+app.db
+*.db
+*.db-journal
+*.sqlite3

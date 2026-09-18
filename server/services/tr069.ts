@@ -335,7 +335,7 @@ export class TR069Service {
       LOGGER.info(parsed);
       LOGGER.info("===body====");
       LOGGER.info(body);
-      LOGGER.info(body.InformResponse);
+      //LOGGER.info(body.InformResponse);
       if (!body) throw new Error("Invalid SOAP Envelope");
 
       if (body.GetParameterValues) {
@@ -827,7 +827,8 @@ export class TR069Service {
   // Rewrite cookie domain manually
 
 
-  async sendToAcs_axios(acsUrl: string, token: string, xmlBody: string) {
+  //async sendToAcs_axios(acsUrl: string, token: string, xmlBody: string) {
+  async sendToAcs(acsUrl: string, token: string, xmlBody: string) {
     try {
       LOGGER.info("Sending SOAP to Token & ACS URL: " + token + " acsUrl " + acsUrl);
       const response = await postAxiosWithToken(acsUrl, xmlBody, token);
@@ -870,8 +871,8 @@ export class TR069Service {
   }
 
   //This is for not-fetch based code currently not used
-  //async sendToAcsNodeFetch(acsUrl: string, token: string, xmlBody: string) {
-  async sendToAcs(acsUrl: string, token: string, xmlBody: string) {
+  async sendToAcsNodeFetch(acsUrl: string, token: string, xmlBody: string) {
+    //async sendToAcs(acsUrl: string, token: string, xmlBody: string) {
     try {
       LOGGER.info("[sendToAcs] Sending SOAP to Token & ACS URL: " + token + " acsUrl " + acsUrl);
       LOGGER.info("[sendToAcs] agent selection based on ENDPOINT_CONNECTION_AGENT: " + process.env.ENDPOINT_CONNECTION_AGENT);

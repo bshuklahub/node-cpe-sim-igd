@@ -574,23 +574,7 @@ async function registerCRRequest(url: any) {
 
 async function registerCRRequestNoSocksAgent(url: any) {
   LOGGER.info("registerCRRequestNoSocksAgent url -->" + url);
-  // Replace your old crClient.get script logic with this:
-  const response = await fetch(url, {
-    method: 'GET',
-    headers: {
-      'Authorization': 'Basic ' + Buffer.from('admin:admin1234').toString('base64'),
-      'User-Agent': 'Node-DeviceClient/1.0.0', // An honest script signature
-      'Accept': 'application/json'
-    }
-  });
 
-  const body = await response.text();
-  console.log("~~~~~~~~~~~~~~~registerCRRequestNoSocksAgent response status code:", response.status);
-  console.log(body);
-
-  if (true) {
-    process.exit(0);
-  }
   // 1. Generate the Base64 Auth header value
   const authHeader = 'Basic ' + Buffer.from('admin:admin1234').toString('base64');
   // 2. Add Firefox spoofing elements and Auth parameters

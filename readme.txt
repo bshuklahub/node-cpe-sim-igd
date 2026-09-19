@@ -170,4 +170,4 @@ rm ~/.git-credentials
 git config --global --unset credential.helper
 git config user.name "bshuklahub"
 git config user.email "brijeshk.shukla@outlook.com"
-git remote set-url origin https://bshuklahub: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@github.com/bshuklahub/node-cpe-sim-igd.git
+git remote set-url origin <hub url>

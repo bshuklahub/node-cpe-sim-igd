@@ -162,3 +162,12 @@ export default defineConfig({
 
 Let me know if you run into any new error codes or if your backend application runs on a separate port (like 5000 or 5001) that also needs to be linked.
 
+
+
+
+//GITHUB bshuklahub
+rm ~/.git-credentials
+git config --global --unset credential.helper
+git config user.name "bshuklahub"
+git config user.email "brijeshk.shukla@outlook.com"
+git remote set-url origin https://bshuklahub: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@github.com/bshuklahub/node-cpe-sim-igd.git

@@ -11,7 +11,7 @@ export interface IAuthStorage {
 
 class AuthStorage implements IAuthStorage {
   async getUser(id: string): Promise<User | undefined> {
-    const [user] = await db.select().from(users).where(eq(users.id, id));
+    const [user] = await db.select().from(users).where(eq(users.id, parseInt(id, 10)));
     return user;
   }
 
@@ -21,10 +21,7 @@ class AuthStorage implements IAuthStorage {
       .values(userData)
       .onConflictDoUpdate({
         target: users.id,
-        set: {
-          ...userData,
-          updatedAt: new Date(),
-        },
+        set: { ...userData },
       })
       .returning();
     return user;

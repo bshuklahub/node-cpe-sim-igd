@@ -147,7 +147,7 @@ export class DataSeeder {
 
             const deviceDefaults = [
                 { name: DEVICE_TR069_DATA_MODEL_TYPE + '.DeviceInfo.Manufacturer', value: mockDevice.manufacturer },
-                { name: DEVICE_TR069_DATA_MODEL_TYPE + '.DeviceInfo.ModelName', value: mockDevice.modelName },
+                { name: DEVICE_TR069_DATA_MODEL_TYPE + '.DeviceInfo.ModelName', value: mockDevice.model },
                 { name: DEVICE_TR069_DATA_MODEL_TYPE + '.DeviceInfo.SerialNumber', value: mockDevice.serialNumber },
                 { name: DEVICE_TR069_DATA_MODEL_TYPE + '.DeviceInfo.ManufacturerOUI', value: mockDevice.oui },
                 { name: DEVICE_TR069_DATA_MODEL_TYPE + '.DeviceInfo.ProductClass', value: mockDevice.productClass },
@@ -208,9 +208,15 @@ export class DataSeeder {
         this.logger.info('Seeding notification data...');
 
         try {
-            const ipParam = await this.storage.getParameter(DEVICE_TR069_DATA_MODEL_TYPE + '.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.ExternalIPAddress');
+            // Find the ExternalIPAddress parameter by pattern rather than a hard-coded
+            // instance path, so this works regardless of the WAN connection instance
+            // numbers present in the data model.
+            const candidates = await this.storage.getMatchingParameters(DEVICE_TR069_DATA_MODEL_TYPE + '.WANDevice.');
+            const ipParam = candidates.find((p: any) => p.name.endsWith('.ExternalIPAddress'));
+
             if (!ipParam) {
-                throw new Error('Required parameter not found: ' + DEVICE_TR069_DATA_MODEL_TYPE + '.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.ExternalIPAddress');
+                this.logger.warn('No ExternalIPAddress parameter found - notification seeding skipped');
+                return;
             }
 
             // Enable notifications (third argument = 1)
@@ -265,11 +271,11 @@ export class DataSeeder {
         if (!acsUrlSetting) {
             this.logger.warn('acsUrl setting missing – inserting defaults');
             await Promise.all([
-                this.storage.insertOrUpdateSetting('acsUrl', this.defaultAcsUrl),
-                this.storage.insertOrUpdateSetting('username', (process.env.DEFAULT_ACS_USERNAME) ? process.env.DEFAULT_ACS_USERNAME : 'cpedefaultusr'),
-                this.storage.insertOrUpdateSetting('password', (process.env.DEFAULT_ACS_PASSWORD) ? process.env.DEFAULT_ACS_PASSWORD : 'cpedefaultpwd'),
-                this.storage.insertOrUpdateSetting('interval', (process.env.DEFAULT_INTERVAL) ? process.env.DEFAULT_INTERVAL : '60'),
-                this.storage.insertOrUpdateSetting('periodicInformEnabled', 'true'),
+                this.storage.updateSetting('acsUrl', this.defaultAcsUrl),
+                this.storage.updateSetting('username', (process.env.DEFAULT_ACS_USERNAME) ? process.env.DEFAULT_ACS_USERNAME : 'cpedefaultusr'),
+                this.storage.updateSetting('password', (process.env.DEFAULT_ACS_PASSWORD) ? process.env.DEFAULT_ACS_PASSWORD : 'cpedefaultpwd'),
+                this.storage.updateSetting('interval', (process.env.DEFAULT_INTERVAL) ? process.env.DEFAULT_INTERVAL : '60'),
+                this.storage.updateSetting('periodicInformEnabled', 'true'),
             ]);
         }
     }

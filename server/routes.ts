@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { tr069 } from "./services/tr069";
 import { manager } from "./services/diagnosticManager";
 import { EventService, EVENTS } from "./services/eventService";
+import { setEventService } from "./services/eventBus";
 import { api } from "@shared/routes";
 import { z } from "zod";
 import fs from "fs";
@@ -19,6 +20,9 @@ import { DataSeeder } from './seeder';
 // Configure once at app startup
 const LOGGER = getLogger('ROUTES');
 export const eventService = new EventService(tr069, manager);
+// Publish the singleton so service modules can emit events without
+// creating a circular import with this routes module.
+setEventService(eventService);
 const PERIODIC_INTERVAL_SEC = parseInt(process.env.PERIODIC_SEC || "80", 0); // 5 minutes default
 let DYNAMIC_PERIODIC_INTERVAL_SEC = parseInt(process.env.PERIODIC_SEC || "60", 0); // 5 minutes default
 const DEVICE_TR069_DATA_MODEL_TYPE = process.env.DEVICE_TR069_DATA_MODEL_TYPE || "InternetGatewayDevice";
@@ -121,13 +125,21 @@ export async function registerRoutes(
   // code for upload and download tests
   // File download endpoint
   app.get('/download/:filename', (req, res) => {
-    const filename = req.params.filename;
+    // Prevent path traversal: only ever use the basename of the requested file,
+    // so requests like /download/../../etc/passwd cannot escape the download dir.
+    const filename = path.basename(req.params.filename);
     const filePath = path.join(tr143DownloadFiles, filename);
+
+    // Verify the resolved file actually lives inside the download directory
+    const resolvedDownloadDir = path.resolve(tr143DownloadFiles);
+    if (!path.resolve(filePath).startsWith(resolvedDownloadDir + path.sep)) {
+      return res.status(400).send('Invalid filename');
+    }
 
     const fileStream = fs.createReadStream(filePath);
 
     res.setHeader('Content-Type', 'text/plain');
-    res.setHeader('Content-Disposition', 'attachment; filename="filename.txt"');
+    res.setHeader('Content-Disposition', `attachment; filename="${filename}"`);
 
     // Pipe the file stream to the response
     fileStream.pipe(res);
@@ -281,10 +293,33 @@ export async function registerRoutes(
   });
 
   app.get(api.cpe.info.path, async (req, res) => {
-    console.log("Routes called ..." + api.cpe.info.path);
+    LOGGER.info("Routes called ..." + api.cpe.info.path);
+    try {
+      const params = await storage.getParameters();
+      const find = (suffix: string) =>
+        params.find(p => p.name === DEVICE_TR069_DATA_MODEL_TYPE + ".DeviceInfo." + suffix)?.value;
+      const wanIp = params.find(p =>
+        p.name.includes("WANConnectionDevice") && p.name.endsWith(".ExternalIPAddress")
+      )?.value;
 
-    //const result = await storage.getTransfers();
-    res.json(mockDevice);
+      res.json({
+        manufacturer: find("Manufacturer") || mockDevice.manufacturer,
+        model: find("ModelName") || mockDevice.model,
+        oui: find("ManufacturerOUI") || mockDevice.oui,
+        productClass: find("ProductClass") || mockDevice.productClass,
+        serialNumber: find("SerialNumber") || mockDevice.serialNumber,
+        softwareVersion: find("SoftwareVersion") || mockDevice.softwareVersion,
+        hardwareVersion: find("HardwareVersion") || mockDevice.hardwareVersion,
+        connectionStatus: "online",
+        lastContact: new Date().toISOString(),
+        ipAddress: wanIp || "192.168.1.1",
+        macAddress: "00:1A:2B:3C:4D:6E",
+        uptime: find("UpTime") || mockDevice.uptime,
+      });
+    } catch (e) {
+      LOGGER.error("Failed to build CPE info, falling back to mock data:" + e);
+      res.json(mockDevice);
+    }
   });
 
   // -----------------------------
@@ -384,42 +419,38 @@ export async function registerRoutes(
 // Periodic Inform scheduler
 // -----------------------------
 
-function startPeriodicInform() {
-  console.log(`[startPeriodicInform] Running task with delay: ${DYNAMIC_PERIODIC_INTERVAL_SEC}ms`);
+async function startPeriodicInform() {
+  console.log(`[startPeriodicInform] Running task, interval (seconds): ${DYNAMIC_PERIODIC_INTERVAL_SEC}`);
   LOGGER.info(`[CPE] Periodic Inform every ${DYNAMIC_PERIODIC_INTERVAL_SEC} seconds.`);
-  // Logically change the delay for the NEXT execution
-  //LOGGER.info
-
-  storage.getSetting("interval").then((setting) => {
-    const newInterval = parseInt(setting?.value || "60", 10);
+  try {
+    // Refresh the interval from the DB for the NEXT execution
+    const intervalSetting = await storage.getSetting("interval");
+    const newInterval = parseInt(intervalSetting?.value || "60", 10);
     if (!isNaN(newInterval) && newInterval > 0) {
       DYNAMIC_PERIODIC_INTERVAL_SEC = newInterval;
       console.log(`Updated dynamic periodic interval to: ${DYNAMIC_PERIODIC_INTERVAL_SEC} seconds`);
     } else {
-      console.log(`Invalid periodicIntervalSec value: ${setting?.value}, keeping previous: ${DYNAMIC_PERIODIC_INTERVAL_SEC} seconds`);
+      console.log(`Invalid periodicIntervalSec value: ${intervalSetting?.value}, keeping previous: ${DYNAMIC_PERIODIC_INTERVAL_SEC} seconds`);
     }
-    // Schedule the next run with the new value
-    const isPIDisabled = storage.getSetting("periodicInformEnabled").then((setting) => {
-      const periodicInformEnabled = setting?.value === "true";
-      if (periodicInformEnabled) {
-        LOGGER.info(`[CPE] Periodic Inform is enabled. Next inform in ${DYNAMIC_PERIODIC_INTERVAL_SEC} seconds.`);
-        LOGGER.info(Date.now() + " :## Sending Periodic Inform ......" + DYNAMIC_PERIODIC_INTERVAL_SEC)
-        eventService.emit(EVENTS.INFORM, "PERIODIC TIMER", "2 PERIODIC");
-        setTimeout(startPeriodicInform, DYNAMIC_PERIODIC_INTERVAL_SEC * 1000);
-      } else {
-        LOGGER.info(`[CPE] Periodic Inform is disabled. next check for further informs will be sent.`);
-        setTimeout(startPeriodicInform, DYNAMIC_PERIODIC_INTERVAL_SEC * 1000);
-        return;
-      }
-    }).catch((error) => {
-      console.error("Error fetching periodicInformEnabled setting:", error);
-      LOGGER.error("Error fetching periodicInformEnabled setting:", error);
-    });
-  }).catch((error) => {
-    console.error("2-Error fetching periodicIntervalSec setting:", error);
-    LOGGER.error("2-Error fetching periodicIntervalSec setting:", error);
-  });
 
+    const enabledSetting = await storage.getSetting("periodicInformEnabled");
+    const periodicInformEnabled = enabledSetting?.value === "true";
+    if (periodicInformEnabled) {
+      LOGGER.info(`[CPE] Periodic Inform is enabled. Next inform in ${DYNAMIC_PERIODIC_INTERVAL_SEC} seconds.`);
+      LOGGER.info(Date.now() + " :## Sending Periodic Inform ......" + DYNAMIC_PERIODIC_INTERVAL_SEC);
+      eventService.emit(EVENTS.INFORM, "PERIODIC TIMER", "2 PERIODIC");
+    } else {
+      LOGGER.info(`[CPE] Periodic Inform is disabled. next check for further informs will be sent.`);
+    }
+  } catch (error) {
+    // A DB failure here must NOT stop the periodic informs permanently.
+    console.error("Error in startPeriodicInform:", error);
+    LOGGER.error("Error in startPeriodicInform:", error);
+  } finally {
+    // Always re-arm the timer (both on success and on error) so the
+    // periodic inform never silently stops.
+    setTimeout(startPeriodicInform, DYNAMIC_PERIODIC_INTERVAL_SEC * 1000);
+  }
 }
 
 

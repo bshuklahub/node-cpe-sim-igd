@@ -53,6 +53,14 @@ app.use(
 const AUTH_USER = process.env.BASIC_AUTH_USER || "admin";
 const AUTH_PASS = process.env.BASIC_AUTH_PASS || "admin";
 
+// Augment the express-session SessionData type with the custom fields used below
+declare module "express-session" {
+  interface SessionData {
+    authenticated: boolean;
+    username: string;
+  }
+}
+
 function requireAuth(req: Request, res: Response, next: NextFunction) {
   // Skip auth for ACS endpoints (they may have their own auth)
   if (req.path.startsWith('/api/acs')) {
@@ -87,8 +95,8 @@ app.use(express.urlencoded({ extended: true }));
 // Auth routes
 app.post("/api/auth/login", (req, res) => {
   LOGGER.info("Login attempt received");
-  LOGGER.info(`Request body: ${JSON.stringify(req.body)}`);
   const { username, password } = req.body;
+  // Note: never log the password itself (only whether it was provided)
   LOGGER.info(`Username: ${username}`);
   LOGGER.info(`Password: ${password ? '******' : 'not provided'}`);
 
@@ -144,8 +152,7 @@ export function log(message: string, source = "express") {
     hour12: true,
   });
 
-  //console.log(`${formattedTime} [${source}] ${message}`);
-  console.log(`${formattedTime} [${source}] `);
+  console.log(`${formattedTime} [${source}] ${message}`);
 }
 
 app.use((req, res, next) => {

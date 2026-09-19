@@ -16,7 +16,8 @@ const config: Configuration = {
       type: 'dateFile',
       filename: 'logs/app.log',
       pattern: '.yyyy-MM-dd',
-      daysToKeep: 30,
+      // Keep 30 days worth of rotated log files
+      numBackups: 30,
       keepFileExt: true,
       layout: {
         type: 'pattern',

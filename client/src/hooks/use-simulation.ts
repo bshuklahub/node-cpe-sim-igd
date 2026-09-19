@@ -3,7 +3,7 @@ import { api } from "@shared/routes";
 
 export function useInform() {
   return useMutation({
-    mutationFn: async (eventCode) => {
+    mutationFn: async (eventCode: string) => {
       
       const validated = api.simulation.inform.input.parse({ eventCode });
       

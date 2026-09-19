@@ -11,7 +11,6 @@ import { wrapper } from "axios-cookiejar-support";
 import http from "http";
 import https from "https";
 const DEVICE_TR069_DATA_MODEL_TYPE = process.env.DEVICE_TR069_DATA_MODEL_TYPE || "InternetGatewayDevice";
-import { eventService } from "server/routes";
 import { TR143Service } from "./tr143";
 const cookieJar = new CookieJar();
 import { SocksProxyAgent, type SocksProxyAgentOptions } from 'socks-proxy-agent';
@@ -29,20 +28,21 @@ const LOGGER = getLogger('TR069');
 const jar = new tough.CookieJar();
 //AGENT 1: http Proxy - you need http proxy tunnel
 // Code added for http and https proxy
-// HTTPS agent (for https:// URLs)
-process.env.NODE_TLS_REJECT_UNAUTHORIZED = '0';
+// TLS is verified by default. Lab ACS servers with self-signed certificates can
+// opt out explicitly with TLS_REJECT_UNAUTHORIZED=false (do NOT use in production).
+const tlsRejectUnauthorized = process.env.TLS_REJECT_UNAUTHORIZED !== 'false';
 const httpProxyUrl = process.env.HTTP_PROXY_URL || "http://127.0.0.1:18282";   // your HTTP proxy
 const httpsProxyAgent = new HttpsProxyAgent(httpProxyUrl, {
-  rejectUnauthorized: false, // ignore SSL errors from target server
+  rejectUnauthorized: tlsRejectUnauthorized, // ignore SSL errors from self-signed lab ACS servers
   keepAlive: true
 });
 //AGENT 2:https agent
 // Create keep‑alive agents
-// Create the agent to ignore SSL certification errors
+// Create the agent to optionally ignore SSL certification errors (lab only)
 const httpAgent = new http.Agent({ keepAlive: true });
 const httpsAgent = new https.Agent({
   keepAlive: true,
-  rejectUnauthorized: false // This ignores the self-signed or invalid certificate error
+  rejectUnauthorized: tlsRejectUnauthorized // verifies certs unless TLS_REJECT_UNAUTHORIZED=false
 });
 
 // AGENT 3: Initialize your SOCKS Proxy Agent (Supports SOCKS4, SOCKS4a, and SOCKS5)
@@ -52,7 +52,7 @@ const socksProxyUrl = process.env.SOCKS_PROXY_URL || 'socks5h://127.0.0.1:65509'
 // Explicitly combine the SOCKS types with TLS connection types
 const agentOptions: SocksProxyAgentOptions & ConnectionOptions = {
   keepAlive: true,
-  rejectUnauthorized: false // ✅ Recognized perfectly by TypeScript now
+  rejectUnauthorized: tlsRejectUnauthorized // Recognized perfectly by TypeScript now
 };
 const socksAgent = new SocksProxyAgent(socksProxyUrl, agentOptions);
 // node-fetch will call this function with the parsed URL
@@ -182,19 +182,6 @@ export class TR069Service {
 
     await storage.createLog({ type, message, details });
   }
-  public async communicationsLog(type: "INFO" | "ERROR" | "SOAP_IN" | "SOAP_OUT", message: string, details?: string) {
-    console.log("~~~~~~~~~~~~~~~~~LOGGING~~~~~~~~~~~~~~~")
-    //console.log(`[${type}] ${message}`);
-    if (type === "ERROR") {
-      LOGGER.error('Something went wrong', new Error(message));
-      LOGGER.error(details);
-    } else {
-      //LOGGER.info(`[${type}] ${message}`);
-      //LOGGER.info(details);
-    }
-
-    await storage.createLog({ type, message, details });
-  }
 
   // --- XML Building Helpers ---
 
@@ -229,7 +216,7 @@ export class TR069Service {
       DEVICE_TR069_DATA_MODEL_TYPE + '.DeviceInfo.ProvisioningCode',
       DEVICE_TR069_DATA_MODEL_TYPE + '.ManagementServer.ParameterKey',
       DEVICE_TR069_DATA_MODEL_TYPE + '.ManagementServer.ConnectionRequestURL',
-      (DEVICE_TR069_DATA_MODEL_TYPE == 'Device.') ? 'Device.IP.Interface.1.IPv4Address.1.IPAddress' : 'InternetGatewayDevice.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.ExternalIPAddress',
+      (DEVICE_TR069_DATA_MODEL_TYPE == 'Device.') ? 'Device.IP.Interface.1.IPv4Address.1.IPAddress' : DEVICE_TR069_DATA_MODEL_TYPE + '.WANDevice.1.WANConnectionDevice.1.WANPPPConnection.1.ExternalIPAddress',
       DEVICE_TR069_DATA_MODEL_TYPE + '.ManagementServer.AliasBasedAddressing'
 
     ];
@@ -549,16 +536,15 @@ export class TR069Service {
     const params = Array.isArray(paramList) ? paramList : [paramList];
     LOGGER.info(JSON.stringify(params));
     for (const p of params) {
-      //first check if parameter exists 
+      //Check if acs parameter name is present
+      if (p.Name == null || p.Name.length === 0) {
+        return this.buildFault("9005", "Parameter Name Missing");
+      }
+      //first check if parameter exists
       const dbParam = await storage.getParameter(p.Name);
       LOGGER.info("handleSetParameterAttribute(ACS) :" + p)
       LOGGER.info("handleSetParameterAttribute(CPE) :" + dbParam)
       LOGGER.info(dbParam);
-      //Check if acs parameter is set 
-      LOGGER.info("SPV checking is ACS parameters to be updated !!");
-      if (p.name == null || p.name.length() == 0) {
-        return await this.buildFault("9005", "Parameter Name Missing");
-      }
       //Notification =0(DISABLE) ,1(PASSIVE),2(ACTIVE) 
       if (dbParam) {
         await storage.updateParameter(p.Name, dbParam.value, p.Notification);

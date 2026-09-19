@@ -4,8 +4,7 @@ import { Readable } from "stream";
 import { getLogger } from '../util/logutil';
 import { performance } from 'node:perf_hooks';
 import { EVENTS } from "./eventService";
-import { eventService } from "server/routes";
-import { defaults } from "pg";
+import { getEventService } from "./eventBus";
 const LOGGER = getLogger('DIAGNOSTICS_MANAGER');
 
 //For TR181 it would be Device.IP.Diagnostics
@@ -145,7 +144,7 @@ export class DiagnosticsManager {
             //Get parameters to notify ACS
             const parameterNames = await this.updateTR143DownloadCompletedParams({});
             // Notify event service
-            eventService.emit(EVENTS.DOWNLOAD_DIAGNOSTICS_COMPLETED, parameterNames, "DOWNLOAD_DIAGNOSTICS_COMPLETED");
+            getEventService().emit(EVENTS.DOWNLOAD_DIAGNOSTICS_COMPLETED, parameterNames, "DOWNLOAD_DIAGNOSTICS_COMPLETED");
             //We now need to add these values in DB as well
             await storage.addTestHistory({
                 testType: "Download",
@@ -247,7 +246,7 @@ export class DiagnosticsManager {
             //Get parameters to notify ACS
             const parameterNames = await this.updateTR143UploadCompletedParams({});
             // Notify event service
-            eventService.emit(EVENTS.UPLOAD_DIAGNOSTICS_COMPLETED, parameterNames, "UPLOAD_DIAGNOSTICS_COMPLETED");
+            getEventService().emit(EVENTS.UPLOAD_DIAGNOSTICS_COMPLETED, parameterNames, "UPLOAD_DIAGNOSTICS_COMPLETED");
             await storage.addTestHistory({
                 testType: "Upload",
                 startTime,

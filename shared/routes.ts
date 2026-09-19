@@ -4,6 +4,7 @@ import {
   insertSettingSchema,
   parameters, settings,
   logs,
+  transfers,
   insertDownloadSchema,
   insertUploadSchema,
   downloadDiagnostics,
@@ -111,23 +112,20 @@ export const api = {
     },
     transferComplete: {
       method: "POST" as const,
-      path: "/api/simulation/inform",
-      input: z.object({ eventCode: z.string().default("2 PERIODIC") }),
+      path: "/api/simulation/transferComplete",
+      input: z.object({ transferId: z.number() }),
       responses: {
         200: z.object({ success: z.boolean(), message: z.string() }),
       },
     },
   },
   transfers: {
-    inform: {
-      method: "POST" as const,
-      input: z.object({ eventCode: z.string().default("2 PERIODIC") }),
-      responses: {
-        200: z.object({ success: z.boolean(), message: z.string() }),
-      },
-    },
     list: {
-      path: "/api/transfer/inform"
+      method: "GET" as const,
+      path: "/api/transfers",
+      responses: {
+        200: z.array(z.custom<typeof transfers.$inferSelect>()),
+      },
     },
   },
   cpe: {

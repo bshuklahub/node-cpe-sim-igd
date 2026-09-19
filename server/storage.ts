@@ -204,30 +204,6 @@ export class DatabaseStorage implements IStorage {
 
   }
 
-  async updateInsertSetting(key: string, value: string): Promise<Setting> {
-    const [result] = await db
-      .insert(settings)
-      .values({ key, value })
-      .onConflictDoUpdate({
-        target: settings.key, // Requires a unique constraint or primary key on 'key'
-        set: { value },
-      })
-      .returning();
-
-    return result;
-  }
-  async insertOrUpdateSetting(key: string, value: string): Promise<Setting> {
-    const [updated] = await db
-      .insert(settings)
-      .values({ key, value })
-      .onConflictDoUpdate({
-        target: settings.key,
-        set: { value },
-      })
-      .returning();
-    return updated;
-  }
-
   // Logs
   async getLogs(limit: number = 50): Promise<Log[]> {
     //return await db.select().from(logs).orderBy(desc(logs.timestamp)).limit(limit);

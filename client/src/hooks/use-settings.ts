@@ -1,5 +1,6 @@
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
-import { api, type InsertSetting } from "@shared/routes";
+import { api } from "@shared/routes";
+import type { InsertSetting } from "@shared/schema";
 
 export function useSettings() {
   return useQuery({

@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
-import { TR069Service } from './tr069';
-import { DiagnosticsManager } from './diagnosticManager';
+import type { TR069Service } from './tr069';
+import type { DiagnosticsManager } from './diagnosticManager';
 
 
 // Define event types
@@ -29,10 +29,9 @@ export class EventService extends EventEmitter {
     this.on(EVENTS.INFORM, async (payload, eventName) => {
       console.log(`[EventService] from ${payload} ..Processing INFORM for eventName: ${eventName}`);
 
-      // Simulate async processing (e.g., sending email)
       try {
         await this.simulateDelay(1000);
-        tr069.sendInformToACS(eventName);
+        await tr069.sendInformToACS(eventName);
 
         console.log(eventName, 'processed', 'Inform event processed successfully. -->' + payload);
       } catch (error) {
@@ -43,11 +42,11 @@ export class EventService extends EventEmitter {
     this.on(EVENTS.INFORM_VALUE_CHANGE, async (payload, eventName) => {
       console.log(`[EventService] from ${payload} ..Processing Value change INFORM for eventName: ${eventName}`);
 
-      // Simulate async processing (e.g., sending email)
       try {
         await this.simulateDelay(1000);
 
-        //tr069.sendInformToACS(eventName, payload);
+        // Notify the ACS with the changed parameter name(s) (TR-069 "4 VALUE CHANGE")
+        await tr069.sendInformToACS(eventName, payload);
         console.log(eventName, 'processed', 'Inform Value change  event processed successfully. -->' + payload);
       } catch (error) {
         console.log(eventName, 'failed', 'Failed to send welcome email.');
@@ -85,11 +84,10 @@ export class EventService extends EventEmitter {
     this.on(EVENTS.DOWNLOAD_DIAGNOSTICS_COMPLETED, async (payload, eventName) => {
       console.log(`[EventService] from ${payload} ..Processing DOWNLOAD_DIAGNOSTICS_COMPLETED for eventName: ${eventName}`);
 
-      // Simulate async processing (e.g., sending email)
       try {
         await this.simulateDelay(1000);
-        await this.manager.updateTR143DownloadCompletedParams(EVENTS.UPLOAD_DIAGNOSTICS);
-        tr069.sendInformToACS("8 DIAGNOSTICS COMPLETE", payload);
+        await this.manager.updateTR143DownloadCompletedParams(EVENTS.DOWNLOAD_DIAGNOSTICS);
+        await tr069.sendInformToACS("8 DIAGNOSTICS COMPLETE", payload);
 
         console.log(eventName, 'processed', 'Inform event processed successfully. -->' + payload);
       } catch (error) {
@@ -101,11 +99,10 @@ export class EventService extends EventEmitter {
     this.on(EVENTS.UPLOAD_DIAGNOSTICS_COMPLETED, async (payload, eventName) => {
       console.log(`[EventService] from ${payload} ..Processing UPLOAD_DIAGNOSTICS_COMPLETED for eventName: ${eventName}`);
 
-      // Simulate async processing (e.g., sending email)
       try {
         await this.simulateDelay(1000);
-        this.manager.updateTR143DownloadCompletedParams(EVENTS.UPLOAD_DIAGNOSTICS);
-        tr069.sendInformToACS("8 DIAGNOSTICS COMPLETE", payload);
+        await this.manager.updateTR143DownloadCompletedParams(EVENTS.UPLOAD_DIAGNOSTICS);
+        await tr069.sendInformToACS("8 DIAGNOSTICS COMPLETE", payload);
         console.log(eventName, 'processed', 'Inform event processed successfully. -->' + payload);
       } catch (error) {
         console.log(eventName, 'failed', 'Failed to send welcome email.');

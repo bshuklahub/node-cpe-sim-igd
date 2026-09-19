@@ -3,8 +3,8 @@ import { XMLBuilder, XMLParser } from "fast-xml-parser";
 import { getLogger } from '../util/logutil';
 
 import { TR069Service } from "./tr069";
-import { eventService } from "server/routes";
 import { EVENTS } from "./eventService";
+import { getEventService } from "./eventBus";
 
 const LOGGER = getLogger('TR143Service');
 
@@ -88,7 +88,7 @@ export class TR143Service {
             ...updates,
             diagnosticsState: updates.diagnosticsState as any
         });
-        eventService.emit(EVENTS.DOWNLOAD_DIAGNOSTICS, dbDownloadUpdated, EVENTS.DOWNLOAD_DIAGNOSTICS);
+        getEventService().emit(EVENTS.DOWNLOAD_DIAGNOSTICS, dbDownloadUpdated, EVENTS.DOWNLOAD_DIAGNOSTICS);
         LOGGER.info("TR143 Download Diagnostics updated: " + JSON.stringify(dbDownloadUpdated));
 
     }
@@ -139,7 +139,7 @@ export class TR143Service {
         }
         LOGGER.info("Storing tr143 upload data ..");
         const dbUploadUpdated = await storage.updateUploadDiagnostics(updates);
-        eventService.emit(EVENTS.UPLOAD_DIAGNOSTICS, dbUploadUpdated, EVENTS.UPLOAD_DIAGNOSTICS);
+        getEventService().emit(EVENTS.UPLOAD_DIAGNOSTICS, dbUploadUpdated, EVENTS.UPLOAD_DIAGNOSTICS);
         LOGGER.info("TR143 Upload Diagnostics updated: " + JSON.stringify(dbUploadUpdated));
     }
     /* TR143 GPV  handle */

@@ -1,6 +1,7 @@
 npx drizzle-kit generate // this will generate sql file
 npx drizzle-kit migrate //this will update app.db
 
+## This is for building Docker image and running 
 docker build -t node-cpe-sim . 
 docker run  --add-host=trm-bs.fibercop.local:host-gateway --add-host=trm-dm.fibercop.local:host-gateway -p 8080:5000 --name my-cpe-sim-app node-cpe-sim:latest
 
@@ -99,3 +100,65 @@ Reading config file '/home/bshukla/node-cpe-sim/drizzle.config.ts'
 [✓] Pulling schema from database...
 [✓] Changes applied
 [bshukla@BRIJESH-PC node-cpe-sim]$
+
+
+
+//tunneling 
+
+The 502 Bad Gateway error happens because your server configuration has fs.strict: true enabled. This security feature blocks external requests from reading anything outside your explicit workspace root. When LocalTunnel requests your code components over its public address, Vite flags it as an illegal file system access and rejects it.
+Additionally, you are working on a project structured for a production backend architecture (building to dist/public). If you want to keep coding live, you must adapt your Vite configuration to explicitly permit proxy tunnels.
+Here is the fixed vite.config.ts (or vite.config.js). Replace your file's contents with the following:
+
+import { defineConfig } from "vite";import react from "@vitejs/plugin-react";import path from "path";import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
+export default defineConfig({
+  plugins: [
+    react(),
+    runtimeErrorOverlay(),
+    ...(process.env.NODE_ENV !== "production" &&
+    process.env.REPL_ID !== undefined
+      ? [
+          await import("@replit/vite-plugin-cartographer").then((m) =>
+            m.cartographer(),
+          ),
+          await import("@replit/vite-plugin-dev-banner").then((m) =>
+            m.devBanner(),
+          ),
+        ]
+      : []),
+  ],
+  resolve: {
+    alias: {
+      "@": path.resolve(import.meta.dirname, "client", "src"),
+      "@shared": path.resolve(import.meta.dirname, "shared"),
+      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
+    },
+  },
+  root: path.resolve(import.meta.dirname, "client"),
+  build: {
+    outDir: path.resolve(import.meta.dirname, "dist/public"),
+    emptyOutDir: true,
+  },
+  server: {
+    host: "0.0.0.0",         // 1. Force Vite to bind to all local network interfaces
+    allowedHosts: true,      // 2. Prevent Vite from blocking LocalTunnel domain names
+    hmr: {
+      clientPort: 443,       // 3. Keep WebSockets working over LocalTunnel's HTTPS link
+    },
+    fs: {
+      strict: false,         // 4. CRITICAL: Turn off strict file restrictions so tunnel can read files
+      deny: ["**/.*"],
+    },
+  },
+});
+
+## 🏃‍♂️ Next Steps to Launch
+
+   1. Restart your dev server: Stop your existing terminal process and run your standard build tool command (like npm run dev) so it parses the new file guidelines.
+   2. Launch LocalTunnel: Point your tunnel to your current client port. Assuming it's running on the typical Vite default 5173:
+   
+   lt --port 5173
+   
+   3. Open the tunnel URL: When you click the generated address, look closely for LocalTunnel's default protection page. Press "Click to Continue" to bypass it, allowing your internal assets to load without a hitch.
+
+Let me know if you run into any new error codes or if your backend application runs on a separate port (like 5000 or 5001) that also needs to be linked.
+

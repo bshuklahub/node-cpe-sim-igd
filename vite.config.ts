@@ -8,15 +8,15 @@ export default defineConfig({
     react(),
     runtimeErrorOverlay(),
     ...(process.env.NODE_ENV !== "production" &&
-    process.env.REPL_ID !== undefined
+      process.env.REPL_ID !== undefined
       ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
-          ),
-          await import("@replit/vite-plugin-dev-banner").then((m) =>
-            m.devBanner(),
-          ),
-        ]
+        await import("@replit/vite-plugin-cartographer").then((m) =>
+          m.cartographer(),
+        ),
+        await import("@replit/vite-plugin-dev-banner").then((m) =>
+          m.devBanner(),
+        ),
+      ]
       : []),
   ],
   resolve: {
@@ -32,8 +32,13 @@ export default defineConfig({
     emptyOutDir: true,
   },
   server: {
+    host: "0.0.0.0",         // 1. Force Vite to bind to all local network interfaces
+    allowedHosts: true,      // 2. Prevent Vite from blocking LocalTunnel domain names
+    hmr: {
+      clientPort: 443,       // 3. Keep WebSockets working over LocalTunnel's HTTPS link
+    },
     fs: {
-      strict: true,
+      strict: false,         // 4. CRITICAL: Turn off strict file restrictions so tunnel can read files
       deny: ["**/.*"],
     },
   },

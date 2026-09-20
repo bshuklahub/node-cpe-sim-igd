@@ -67,3 +67,20 @@ export function useResetParameters() {
     onSuccess: () => queryClient.invalidateQueries({ queryKey: [api.parameters.list.path] }),
   });
 }
+
+export function useBulkInsertParameters() {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: async (params: z.infer<typeof api.parameters.bulkInsert.input>) => {
+      const res = await fetch(api.parameters.bulkInsert.path, {
+        method: api.parameters.bulkInsert.method,
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(params),
+        credentials: "include",
+      });
+      if (!res.ok) throw new Error("Failed to insert parameters");
+      return api.parameters.bulkInsert.responses[200].parse(await res.json());
+    },
+    onSuccess: () => queryClient.invalidateQueries({ queryKey: [api.parameters.list.path] }),
+  });
+}

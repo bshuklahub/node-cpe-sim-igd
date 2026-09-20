@@ -59,6 +59,15 @@ export const api = {
         200: z.object({ message: z.string() })
       }
     },
+    bulkInsert: {
+      method: "POST" as const,
+      path: "/api/parameters/bulk-insert",
+      input: z.array(insertParameterSchema),
+      responses: {
+        200: z.object({ inserted: z.number(), updated: z.number() }),
+        400: errorSchemas.validation,
+      },
+    },
     notifications: {
       method: "GET" as const,
       path: "/api/parameters/notifications",

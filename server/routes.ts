@@ -220,6 +220,26 @@ export async function registerRoutes(
     }
   });
 
+  app.post(api.parameters.bulkInsert.path, async (req, res) => {
+    LOGGER.info("Bulk insert parameters API called...." + api.parameters.bulkInsert.path);
+    try {
+      const parsed = api.parameters.bulkInsert.input.safeParse(req.body);
+      if (!parsed.success) {
+        const first = parsed.error.issues[0];
+        return res.status(400).json({
+          message: first?.message ?? "Invalid parameter payload",
+          field: first?.path?.join("."),
+        });
+      }
+      const result = await storage.bulkUpsertParameters(parsed.data);
+      LOGGER.info(`Bulk insert done: inserted=${result.inserted} updated=${result.updated}`);
+      res.json(result);
+    } catch (e: any) {
+      LOGGER.error("Bulk insert failed: " + e.message);
+      res.status(500).json({ message: e.message });
+    }
+  });
+
   app.get(api.settings.list.path, async (req, res) => {
     const settings = await storage.getSettings();
     res.json(settings);
@@ -240,6 +260,14 @@ export async function registerRoutes(
       }
       if (u.key == 'password') {
         await storage.updateParameter(DEVICE_TR069_DATA_MODEL_TYPE + ".ManagementServer.Password", u.value, 0);
+      }
+      if (u.key == 'connectionRequestURL') {
+        const paramName = DEVICE_TR069_DATA_MODEL_TYPE + ".ManagementServer.ConnectionRequestURL";
+        // Update the data model parameter (same value as the setting)
+        await storage.updateParameter(paramName, u.value, 0);
+        // Emit the Value Change event AFTER both the settings and
+        // parameter table updates have completed.
+        eventService.emit(EVENTS.INFORM_VALUE_CHANGE, [paramName], "4 VALUE CHANGE");
       }
     }
     res.json(result);
@@ -409,7 +437,9 @@ export async function registerRoutes(
 
   //For testing comment and uncomments
   startPeriodicInform();
-  startCRServer();
+  // Pass the resolved mock-device serial so the CR URLs are always built with a
+  // real serial number (never the literal string "undefined").
+  startCRServer(mockDevice.serialNumber);
   //await startWebSocketClient(eventService);
   return httpServer;
 } //Register route class ends here 
@@ -455,13 +485,35 @@ async function startPeriodicInform() {
 
 
 
-async function startCRServer() {
+async function startCRServer(serialNumber?: string) {
   try {
+    // The CPE serial number is appended to every CR URL. If it is missing the
+    // URL would end with the literal text "undefined" (e.g.
+    // .../crstatus/undefined). Resolve it in the same way as the mock device
+    // (env var first, then the default), and bail out if it is still empty.
+    const serial = (serialNumber ?? process.env.DEFAULT_CPE_SERIALNUMBER ?? "").trim();
+    if (!serial) {
+      LOGGER.error("startCRServer: CPE serial number is not set (DEFAULT_CPE_SERIALNUMBER). Skipping CR registration/status polling.");
+      return;
+    }
+
     //set the CR url 
-    const CONNECTION_REQEUST_URL_ON_DEVICE = `${process.env.CONNECTION_REQEUST_URL_ON_DEVICE}${process.env.DEFAULT_CPE_SERIALNUMBER}`;
-    const CONNECTION_REQEUST_URL = `${process.env.CONNECTION_REQEUST_URL}${process.env.DEFAULT_CPE_SERIALNUMBER}`;
-    const CONNECTION_REQEUST_REGISTER_URL = `${process.env.CONNECTION_REQEUST_REGISTER_URL}${process.env.DEFAULT_CPE_SERIALNUMBER}`;
-    const CONNECTION_REQEUST_CR_STATUS_URL = `${process.env.CONNECTION_REQEUST_CR_STATUS_URL}${process.env.DEFAULT_CPE_SERIALNUMBER}`;
+    const connReqUrlOnDeviceBase = (process.env.CONNECTION_REQEUST_URL_ON_DEVICE ?? "").trim();
+    const connReqUrlBase = (process.env.CONNECTION_REQEUST_URL ?? "").trim();
+    const registerUrlBase = (process.env.CONNECTION_REQEUST_REGISTER_URL ?? "").trim();
+    const crStatusUrlBase = (process.env.CONNECTION_REQEUST_CR_STATUS_URL ?? "").trim();
+
+    // Don't send bogus requests like /crstatus/undefined when the CR server
+    // URLs are not configured.
+    if (!registerUrlBase || !crStatusUrlBase) {
+      LOGGER.warn(`startCRServer: CONNECTION_REQEUST_REGISTER_URL / CONNECTION_REQEUST_CR_STATUS_URL not configured (got '${registerUrlBase}' / '${crStatusUrlBase}'). Skipping CR registration/status polling.`);
+      return;
+    }
+
+    const CONNECTION_REQEUST_URL_ON_DEVICE = `${connReqUrlOnDeviceBase}${serial}`;
+    const CONNECTION_REQEUST_URL = `${connReqUrlBase}${serial}`;
+    const CONNECTION_REQEUST_REGISTER_URL = `${registerUrlBase}${serial}`;
+    const CONNECTION_REQEUST_CR_STATUS_URL = `${crStatusUrlBase}${serial}`;
 
     LOGGER.info("Starting CR server , and setting CR url to --> " + CONNECTION_REQEUST_URL);
     const regUrl = `${CONNECTION_REQEUST_REGISTER_URL}`;

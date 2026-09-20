@@ -30,6 +30,7 @@ export interface IStorage {
   updateParameter(name: string, value: string, notification?: number): Promise<Parameter>;
   getMatchingParameters(name: string): Promise<Parameter[]>;
   createParameter(param: InsertParameter): Promise<Parameter>;
+  bulkUpsertParameters(items: InsertParameter[]): Promise<{ inserted: number; updated: number }>;
   resetParameters(): Promise<void>;
 
   // Settings
@@ -171,6 +172,44 @@ export class DatabaseStorage implements IStorage {
     console.log(JSON.stringify(param));
     const [created] = await db.insert(parameters).values(param).returning();
     return created;
+  }
+
+  /**
+   * Inserts new parameters or updates existing ones (matched by unique `name`).
+   * Imported parameters are always forced to writable=true and notification=0.
+   */
+  async bulkUpsertParameters(items: InsertParameter[]): Promise<{ inserted: number; updated: number }> {
+    let inserted = 0;
+    let updated = 0;
+    for (const item of items) {
+      const existing = await db.select({ id: parameters.id })
+        .from(parameters)
+        .where(eq(parameters.name, item.name))
+        .limit(1);
+
+      if (existing.length > 0) {
+        await db.update(parameters)
+          .set({
+            value: item.value,
+            type: item.type,
+            writable: true,
+            notification: 0,
+            updatedAt: new Date(),
+          })
+          .where(eq(parameters.name, item.name));
+        updated++;
+      } else {
+        await db.insert(parameters).values({
+          name: item.name,
+          value: item.value,
+          type: item.type,
+          writable: true,
+          notification: 0,
+        });
+        inserted++;
+      }
+    }
+    return { inserted, updated };
   }
 
   async resetParameters(): Promise<void> {

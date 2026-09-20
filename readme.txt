@@ -171,3 +171,10 @@ git config --global --unset credential.helper
 git config user.name "bshuklahub"
 git config user.email "brijeshk.shukla@outlook.com"
 git remote set-url origin <hub url>
+
+
+//podman command
+podman rm -f 00259E-HG8145V5 && podman run -d --name 00259E-HG8145V5 --env-file acscoll.env -p 5000:5000 --add-host speedtest-server-gweu.onrender.com:216.24.57.18 00259e-hg8145v5:latest
+
+podman logs -f 00259E-HG8145V5
+podman stop 00259E-HG8145V5      

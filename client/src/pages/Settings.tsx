@@ -13,6 +13,7 @@ type SettingsForm = {
   interval: string;
   connectionRequestUsername: string;
   connectionRequestPassword: string;
+  connectionRequestURL: string;
   periodicInformEnabled: boolean;
 };
 
@@ -151,6 +152,15 @@ export default function Settings() {
                     {...register("connectionRequestPassword")}
                     className="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm"
                   />
+                </div>
+                <div className="md:col-span-2">
+                  <label className="text-sm font-medium mb-2 block">Connection Request URL</label>
+                  <input
+                    {...register("connectionRequestURL")}
+                    placeholder="http://host:port/connectionRequest/..."
+                    className="w-full px-4 py-2.5 rounded-lg bg-background border border-border focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm font-mono"
+                  />
+                  <p className="text-xs text-muted-foreground mt-2">URL the ACS uses to initiate a connection request to this CPE. Saved to both settings and the TR-069 data model, then a Value Change Inform is sent.</p>
                 </div>
               </div>
             </div>

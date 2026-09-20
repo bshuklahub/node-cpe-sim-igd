@@ -3,6 +3,7 @@ dist
 logs
 *.log
 *.db
+!app.db
 *.db-journal
 *.sqlite3
 .env
